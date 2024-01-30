@@ -1,8 +1,8 @@
-= Module 01 Web Application
+= Module 01 Application Architecture
 
 == Table of Contents
 
-* 응용 프로그램 아키텍처
+* 애플리케이션 아키텍처
 * Web Server
 * CGI(Common Gateway Interface)
 * Servlet

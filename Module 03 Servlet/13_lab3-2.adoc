@@ -1,0 +1,1 @@
+= Lab 3-2 context-param에 설정한 url 정보를 서로 다른 Servlet 에서 조회

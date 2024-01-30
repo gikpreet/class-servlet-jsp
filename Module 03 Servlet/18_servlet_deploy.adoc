@@ -1,0 +1,3 @@
+= Servlet deployment
+
+이 단원에서는 Servlet 배포를 위한 web.xml과 war에 대해 알아봅니다.
