@@ -1,0 +1,13 @@
+= Web Server의 기능
+
+* 정적(static) 컨텐츠 제공
+** 변화가 없는 컨텐츠 제공
+** 모든 사용자에게 동일한 응답
+* 동적(dynamic) 컨텐츠 제공
+** 서버의 요청에 따라 다른 응답을 제공
+* 정적 + 동적 컨텐츠 제공
+
+---
+
+link:./07_overview_web_server.adoc[이전: Web Server 개요] +
+link:./09_types_web_server.adc[다음: Web Server의 종류]

@@ -1,0 +1,17 @@
+= 웹 애플리케이션 구성요소
+
+* 웹 애플리케이션은 기본적으로 HTTP 프토토콜을 통해 통신함
+** 데이터가 HTTP를 통해 데이터가 전달되는 방식을 정의
+** 프리젠테이선 구성요소(클라이언트)와 비즈니스 로직 구성요소(웹 서버 또는 API 서버)가 통신할 수 있도록 함
+* 모든 사용자의 요청에 대한 유효성을 검증함
+* 권한 기반 접근(인증)
+* 웹 애플리케이션 구성요소
+** Presentation Tier
+*** HTML 문서, 이미지 파일, javascript(객체) 등
+** Business Logic Tier
+*** Apache, IIS, NGINX등의 웹 서버
+
+---
+
+link:./03_web_application_architecture[이전: Web Application 구성요소] +
+link:./05_cs_vs_web.adoc[다음: Client-Server와 Web Application 비교]

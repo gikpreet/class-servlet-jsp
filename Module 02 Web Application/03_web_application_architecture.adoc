@@ -1,0 +1,20 @@
+=  Web Application 아키텍처
+
+* Client-Server에 비해 향상된 아키텍처
+** 2-Tier로 구성된 Client-Server에 비해 n-Tier 아키텍처를 기본으로 함
+** 여러 계층(Tier, Layer)으로 구성되어 각 계층에서 필요한 구성요소를 구분하여 포함
+* 향상된 아키텍처
+** 2-Tier 클라이언트-서버에 비해 비즈니스 로직과 프리젠테이션을 분리한 구조
+** 씬 클라이언트(Thin Client)를 사용하여 클라이언트의 성능에 문제를 일으키지 않음
+** 프로그램의 변경과 유지보수가 쉬움
+
+image:./images/image01.png[]
+
+---
+
+2-Tier 클라이언트-서버 형태는 가장 간단한 분산 컴퓨팅 형태로서, 구성이 간단하고 프로그램 개발이 쉽기 때문에 지금도 많이 사용되고 있습니다. 
+
+- 프로그래머를 위한 서블릿/JSP 18 페이지 참조
+
+link:./02_overview_web_application.adoc[이전: Web Application 개요] +
+link:./04_web_application_components.adoc[다음: Web Application 구성요소]

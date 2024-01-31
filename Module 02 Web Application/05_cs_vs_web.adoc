@@ -1,0 +1,16 @@
+= Client-Server와 Web Application 비교
+
+[%header, cols="1,3,3" width=90%]
+|===
+| | 클라이언트-서버 애플리케이션 | 웹 애플리케이션
+|아키텍처| 2-Tire | n-Tier
+|상호작용|사용자 인터페이스 또는 클라이언트를 위해 작성된 애플리케이션| Chrome, Edge, Safari등의 웹 브라우저
+|실행| 클라이언트를 위해 작성된 애플리케이션을 직접 실행 | 웹 브라우저에서 페이지를 호출
+|보안| 지정된 사용자만 접근하고, 사용자가 적으므로 상대적으로 안전함 | 사용자가 많아질수록 위험에 노출됨
+|접근| 제한적 | 인터넷에 연결된 모든 환경
+|===
+
+---
+
+link:./04_web_application_components.adoc[이전: Web Application 구성요소]
+link:./06_web_server.adoc[다음: Web Server]

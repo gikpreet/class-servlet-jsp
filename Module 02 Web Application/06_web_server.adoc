@@ -1,0 +1,13 @@
+= Web Server
+
+Web Server는 웹 브라우저와 같은 클라이언트로 부터 HTTP 요청을 받아들이고, HTML 문서 등과 같은 웹 페이지를 반환하는 컴퓨터 프로그램으로, 웹 애플리케이션 아키텍처에서 비즈니스 로직 계층에 존재하는 웹 애플리케이션 아키텍처의 핵심 역할을 하는 소프트웨어입니다.
+
+이 단원에서는 Web Server에 대해 알아봅니다.
+
+== Table of Contents
+
+1. Web Server 개요
+2. Web Server의 종류
+
+link:./05_cs_vs_web.adoc[이전: Client-Server와 Web Application 비교] +
+link:./07_overview_web_server.adpc[다음: Web Server 개요]
