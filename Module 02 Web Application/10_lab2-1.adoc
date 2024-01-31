@@ -63,25 +63,61 @@ Commercial support is available at
 +
 image:./images/image04.png[]
 +
-9. 아래 명령을 실행하여 Nginx 웹 서버를 종료합니다.
+9. 아래 명령을 실행하여 c:\nginx-<version number> 폴더에 hell.html 파일을 생성합니다.
++
+----
+> fsutil file createnew c:\nginx\nginx-1.24.0\html\hello.html 0
+----
++
+10. 아래 명령을 실행하여 생성한 hello.html 파일을 메모장에서 엽니다.
++
+----
+> notepad c:\nginx\nginx-1.24.0\html\hello.html
+----
++
+11. 메모장에서 hello.html 파일을 아래와 같이 작성하고 저장 후 메모장을 닫습니다.
++
+[source, html]
+----
+<!DOCTYPE html>
+<html>
+        <body>
+                <h1>hello nginx!</h1>
+        </body>
+</html>
+----
++
+12. 웹 브라우저를 실행하고, 주소창에 localhost/hello.html를 입력하고 이동한 후, 페이지를 확인합니다.
++
+image:./images/image06.png[]
++
+13. 아래 명령을 실행하여 Nginx 웹 서버를 종료합니다.
 +
 ----
 c:\nginx\nginx-1.24.0> nginx -s quit
 ----
 +
-[col="1a"]
+[cols="1a"]
 |===
 |**참고** Windows에서 Nginx 시작과 종료 명령은 다음과 같습니다. +
+----
 start nginx       // 시작 +
 nginx -s stop     // 빠른 종료 +
 nginx -s quit     // 일반 종료 +
 nginx -s reload   // 리로드
+----
 |===
 
 === macOS 운영체제에 Nginx 설치
 
 1. 터미널을 실행합니다.
-2. 아래 명령을 실행하여 homebrew에서 nginx를 검색합니다.
+2. 아래 명령을 실행하여 homebrew를 업데이트 합니다.
++
+----
+% brew update
+----
++
+3. 아래 명령을 실행하여 homebrew에서 nginx를 검색합니다.
 +
 ----
 % brew search nginx
@@ -89,20 +125,20 @@ nginx -s reload   // 리로드
 nginx
 ----
 +
-3. 아래 명령을 실행하여 nginx를 설치합니다.
+4. 아래 명령을 실행하여 nginx를 설치합니다.
 +
 ----
 % brew install nginx
 ----
 +
-4. 설치가 완료되면, 아래 명령을 실행하여 nginx를 시작합니다.
+5. 설치가 완료되면, 아래 명령을 실행하여 nginx를 시작합니다.
 +
 ----
 % brew services start nginx
 ==> Successfully started `nginx` (label: homebrew.mxcl.nginx)
 ----
 +
-5. 아래 명령을 실행하여 실행중인 Nginx 웹 서버에 접속합니다.
+6. 아래 명령을 실행하여 실행중인 Nginx 웹 서버에 접속합니다.
 +
 ----
 % curl localhost:8080
@@ -131,14 +167,105 @@ Commercial support is available at
 </html>
 ----
 +
-6. 웹 브라우저를 실행하고, 주소창에 localhost:8080을 입력하고 이동하여 실행중인 Nginx를 확인합니다.
+7. 웹 브라우저를 실행하고, 주소창에 localhost:8080을 입력하고 이동하여 실행중인 Nginx를 확인합니다.
 + 
 image:./images/image05.png[]
 +
-7. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
+8. 
+9. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
 +
 ----
 % brew services stop nginx
 Stopping `nginx`... (might take a while)
 ==> Successfully stopped `nginx` (label: homebrew.mxcl.nginx)
 ----
+
+== Linux(Ubuntu) 운영체제에 Nginx 설치
+
+1. 터미널을 실행합니다.
+2. 아래 명령을 실행하여 패키지 저장소를 업데이트합니다.
++
+----
+$ sudo apt update
+----
++
+3. 아래 명령을 실행하여 nginx를 설치합니다.
++
+----
+$ sudo apt install nginx
+----
++
+4. 아래 명령을 실행하여 Nginx를 시작합니다.
++
+----
+$ sudo systemctl start nginx
+----
++
+5. 아래 명령을 실행하여 실행중인 Nginx 웹 서버에 접속합니다.
++
+----
+% curl localhost
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+----
++
+6. 웹 브라우저를 실행하고, 주소창에 localhost:8080을 입력하고 이동하여 실행중인 Nginx를 확인합니다.
++ 
+
++
+7. 아래 명령을 실행하여 
+
+
+
+
+8. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
++
+----
+% brew services stop nginx
+Stopping `nginx`... (might take a while)
+==> Successfully stopped `nginx` (label: homebrew.mxcl.nginx)
+----
++
+[cols="1a"]
+|===
+|**참고** Ubuntu Linux에서 systemctl을 사용하는 Nginx 시작과 종료 명령은 다음과 같습니다. +
+----
+sudo systemctl start nginx      # 시작 +
+sudo systemctl stop nginx       # 종료 +
+sudo systemctl restart nginx    # 재시작 +
+sudo systemctl reload nginx     # 다시 로드
+----
+
+일반 명령은 아래와 같습니다. +
+----
+$ sudo nginx            # 시작
+$ sudo nginx -s stop    # 빠른 종료
+$ sudo nginx -s quit    # 정상 종료
+$ sudo nginx -s restart # 재시작
+$ sudo nginx -s reload  # 다시 로드
+----
+|===
+
+link:./09_types_web_server.adoc[이전: Web Server의 종류] +
+link:./
