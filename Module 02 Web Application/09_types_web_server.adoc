@@ -32,3 +32,6 @@ https://soyeondev.tistory.com/147
 |===
 
 > 출처: W3Tech, https://w3techs.com/technologies/overview/web_server
+
+link:./08_web_server_functions.adoc[이전: Web Server의 기능] +
+link:./10_lab2-1.adoc[다음: Lab 2-1 Nginx Web Server 설치]

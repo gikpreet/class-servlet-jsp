@@ -1,3 +1,0 @@
-= CGI (Common Gateway Inteface)
-
-이 단원에서는 CGI에 대해 알아봅니다.
