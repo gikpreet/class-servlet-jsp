@@ -63,7 +63,7 @@ Commercial support is available at
 +
 image:./images/image04.png[]
 +
-9. 아래 명령을 실행하여 c:\nginx-<version number> 폴더에 hell.html 파일을 생성합니다.
+9. 아래 명령을 실행하여 c:\nginx-<version number> 폴더에 hello.html 파일을 생성합니다.
 +
 ----
 > fsutil file createnew c:\nginx\nginx-1.24.0\html\hello.html 0
@@ -117,7 +117,7 @@ nginx -s reload   // 리로드
 % brew update
 ----
 +
-3. 아래 명령을 실행하여 homebrew에서 nginx를 검색합니다.
+3. 아래 명령을 실행하여 homebrew에서 Nginx 검색합니다.
 +
 ----
 % brew search nginx
@@ -125,13 +125,13 @@ nginx -s reload   // 리로드
 nginx
 ----
 +
-4. 아래 명령을 실행하여 nginx를 설치합니다.
+4. 아래 명령을 실행하여 Nginx 설치합니다.
 +
 ----
 % brew install nginx
 ----
 +
-5. 설치가 완료되면, 아래 명령을 실행하여 nginx를 시작합니다.
+5. 설치가 완료되면, 아래 명령을 실행하여 Nginx 시작합니다.
 +
 ----
 % brew services start nginx
@@ -171,7 +171,7 @@ Commercial support is available at
 + 
 image:./images/image05.png[]
 +
-8. 아래 명령을 실행하여 nginx 패키지의 설치 정보를 확인합니다.
+8. 아래 명령을 실행하여 Nginx 패키지의 설치 정보를 확인합니다.
 +
 ----
 % brew info nginx
@@ -206,7 +206,7 @@ build-error: 17 (30 days)
 ----
 +
 9. brew의 nginx 패키지 정보에서 Docroot와 nginx.conf 파일 정보를 기억합니다.
-10. 아래 명령을 실행하여 nginx 웹 서버의 Docroot 디렉터리(위에서는 /opt/homebrew/var/www)에 hello.html 파일을 생성합니다.
+10. 아래 명령을 실행하여 Nginx 웹 서버의 Docroot 디렉터리(위에서는 /opt/homebrew/var/www)에 hello.html 파일을 생성합니다.
 +
 ----
 % touch /opt/homebrew/var/www/hello.html
