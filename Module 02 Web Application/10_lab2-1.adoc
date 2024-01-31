@@ -79,3 +79,66 @@ nginx -s reload   // 리로드
 |===
 
 === macOS 운영체제에 Nginx 설치
+
+1. 터미널을 실행합니다.
+2. 아래 명령을 실행하여 homebrew에서 nginx를 검색합니다.
++
+----
+% brew search nginx
+==> Formulae
+nginx
+----
++
+3. 아래 명령을 실행하여 nginx를 설치합니다.
++
+----
+% brew install nginx
+----
++
+4. 설치가 완료되면, 아래 명령을 실행하여 nginx를 시작합니다.
++
+----
+% brew services start nginx
+==> Successfully started `nginx` (label: homebrew.mxcl.nginx)
+----
++
+5. 아래 명령을 실행하여 실행중인 Nginx 웹 서버에 접속합니다.
++
+----
+% curl localhost:8080
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+----
++
+6. 웹 브라우저를 실행하고, 주소창에 localhost:8080을 입력하고 이동하여 실행중인 Nginx를 확인합니다.
++ 
+image:./images/image05.png[]
++
+7. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
++
+----
+% brew services stop nginx
+Stopping `nginx`... (might take a while)
+==> Successfully stopped `nginx` (label: homebrew.mxcl.nginx)
+----
