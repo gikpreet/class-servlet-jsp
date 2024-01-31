@@ -1,10 +1,13 @@
 = CGI (Common Gateway Inteface)
 
-CGI는 동작 웹의 시작점이라 할 수 있는 기술로, 웹 서버가 외부 프로그램을 실행할 수 있도록 해주는 인터페이스 명세이며, C, C++, java, go 등 다양한 언어에서 웹 애플리케이션을 작성할 수 있도록 하는 기술입니다. 이 단원에서는 CGI에 대해 알아봅니다.
+CGI는 동작 웹의 시작점이라 할 수 있는 기술로, 웹 서버가 외부 프로그램을 실행할 수 있도록 해주는 인터페이스 명세이며, C, C++, java, go 등 다양한 컴파일 언어와 ASP, PHP, Python등 인터프리터 언어/환경에서 웹 애플리케이션을 작성할 수 있도록 하는 기술입니다. 이 단원에서는 CGI에 대해 알아봅니다.
 
 == Table of Contents
 
 * CGI 개요
+* CGI SPec
+* Java CGI 프로그램
+* Fast CGI
 
 link:./10_lab2-1.adoc[이전: Lab 2-1 Nginx 웹 서버 설치] +
 link:./12_overview_cgi.adoc[다음: CGI 개요]
