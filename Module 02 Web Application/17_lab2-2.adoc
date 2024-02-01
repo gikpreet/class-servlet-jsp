@@ -47,3 +47,6 @@ mvn.cmd 파일의 위치를 아래와 같이 설정합니다.
 C:\apache-maven-3.9.6\bin\mvn.cmd
 ----
 
+== macOS에서 Maven 환경 설정
+
+이 연습에서는 
