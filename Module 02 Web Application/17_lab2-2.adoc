@@ -315,13 +315,15 @@ public class Main {
 +
 **Windows(java.cgi.bat)** +
 ----
+@ECHO OFF
+
 java -jar ./target/cgi-shade.jar  ^
      -content-type text/html ^
      -method get ^
-     -query-string '?page=2&id=marco' ^
+     -query-string "?page=2&id=marco" ^
      -server-name my-server ^
      -server-port 8080 ^
-     -path /index.html &
+     -path /index.html ^
      -body hello
 ----
 +
@@ -353,5 +355,41 @@ image:./images/image23.png[]
 +
 image:./images/image25.png[]
 +
-4. Visual Studio Code 오른쪽 아래의 MAVEN 패널을 확장하고 **cgi** 항목을 마우스 오른쪽 클릭한 후 
+4. Visual Studio Code 오른쪽 아래의 **MAVEN** 패널을 확장하고 **cgi** 항목을 마우스 오른쪽 클릭한 후 **Run Maven Commands...** > **install**을 클릭합니다.
 +
+image:./images/image26.png[]
++
+5. Explorer 패널에서 빌드 결과를 확인합니다. target 폴더에 cgi-shade.jar 파일이 생성된 것을 확인합니다.
++
+image:./images/image27.png[]
++
+6. 터미널에서 java.cgi.bat(Windows에서) / java.cgi.sh(macOS 또는 Linux에서) 파일을 실행합니다.
++
+**Windows**
+----
+C:\Lab2-2\cgi>java.cgi.bat
+content-type:text/html
+method:get
+query-string:?page=2&id=marco
+server-name:my-server
+server-port:8080
+path:/index.html
+body:hello
+----
++
+**macOS / Linux**
+----
+cgi % ./java.cgi.sh
+content-type:text/html
+method:get
+query-string:?page=2&id=marco
+server-name:my-server
+server-port:8080
+path:/index.html
+body:hello
+----
++
+7. 연습이 종료되었습니다.
+
+link:./fast_cgi.adoc[이전: Fast CGI] +
+link:./
