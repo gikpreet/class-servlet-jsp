@@ -1,0 +1,49 @@
+= Lab 2-2 간단한 Java CGI 애플리케이션 작성
+
+이 연습에서는 간단한 Java CGI 애플리케이션을 작성합니다. 아래 절차에 따릅니다.
+
+== 환경 설정
+
+이 연습에서는 자동화 된 빌드를 위해 Maven을 사용합니다. Visual Studio Code에서 Maven 빌드를 위해서는 Apache Maven이 필요합니다. 여기에서는 Apache Maven을 다운로드하여 설치하고, Visual Studio Code에서 Maven 빌드 환경을 설정합니다.
+
+=== Windows에서 환경 설정
+
+이 연습에서는 Windows에서 Visual Studio Code를 위한 Maven 빌드 환경을 구성합니다. 아래 절차에 따릅니다.
+
+**Apache Maven 설치**
+
+1. 웹 브라우저를 실행하고 Apache Maven 다운로드 사이트로 이동합니다.
++
+https://maven.apache.org/download.cgi
++
+2. Files 구역에서 Binary zip archive를 다운로드 합니다.
++
+image:./images/image13.png[]
++
+3. 다운로드 한 파일을 압축해제 합니다. 
+4. 압축이 해제된 폴드에서 apache-maven-<version>-bin 폴더 내의 apache-maven-<version> 폴더를 C 드라이브 루트로 복사합니다.
+5. 복사된 폴더는 아래와 같은 구조이며, 4개의 하위 폴더를 포함하고 있어야 합니다.
++
+image:./images/image14.png[]
+
+=== Visual Studio Code에서 Maven 환경설정
+
+아 연습에서는 Visual Studio Code에서 Maven 실행 환경을 구성합니다. 아래 절차에 따릅니다.
+
+1. Visual Studio Code를 실행합니다.
+2. **File (파일)** 메뉴에서 **Preferance (기본 설정)**을 클릭합니다.
+3. Settings 탭에서 Search settins에서 Maven을 입력하고 설정을 검색합니다.
+4. **Java > Configuration > Maven: User Settings** 설정에는 Apache Maven의 설정 파일인 settings.xml 파일의 위치가 구성되어야 합니다. +
+settings.xml 파일의 위치를 아래와 같이 설정합니다.
++
+----
+C:\apache-maven-3.9.6\conf\settings.xml
+----
++
+5. **Maven > Excutable: Path++에는 Apache Maven의 실행 경로인 mvn.cmd 파일의 위치가 구성되어야 합니다. +
+mvn.cmd 파일의 위치를 아래와 같이 설정합니다.
++
+----
+C:\apache-maven-3.9.6\bin\mvn.cmd
+----
+

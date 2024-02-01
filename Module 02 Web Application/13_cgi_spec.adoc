@@ -1,0 +1,21 @@
+= CGI Specification
+
+* 입출력
+** 주로 표준 입출력 사용
+* Meta-Variables ( 메타 변수 )
+** 웹서버에서 CGI 프로그램으로 전달되는 요청 관련 데이터
+** 주로 환경변수 (environment variable) 형태로 구현
+*** SERVER_NAME
+*** SERVER_PORT
+*** REMOTE_ADDR
+*** REQUEST_METHOD
+*** CONTENT_TYPE
+*** CONTENT_LENGTH
+
+---
+
+CGI Version 1.1
+https://datatracker.ietf.org/doc/html/rfc3875
+
+link:./12_overview_cgi.adoc[이전: CGI 개요] +
+link:./14_cgi_pros_cons.adoc[다음: CGI 장/단점]
