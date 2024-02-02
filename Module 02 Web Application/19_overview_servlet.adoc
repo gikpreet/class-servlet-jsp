@@ -1,0 +1,18 @@
+= Servlet 개요
+
+* Java를 사용하여 동적 웹 콘텐츠를 생성하는 서버 측 프로그램 또는 그 Specification
+* 웹 서버의 성능을 향상하기 위해 사용되는 Java Class의 일종
+** JSP(Java Server Page)는 HTML 문서에 Java 코드를 포함
+** Servlet은 Java 코드안에 HTML을 포함
+* Java EE( Enterprise Edition) 사양의 일부
+* CGI와의 차이점
+** CGI는 요청이 있을 때마다 새 프로세스가 생성되어 응답
+** Servlet은 스레드로 동작하여 보다 가벼움
+** Java Servlet은 Java로 구현되므로 다양한 플랫폼에서 동작
+
+---
+
+https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EC%84%9C%EB%B8%94%EB%A6%BF
+
+link:./18_servlet.adoc[이전: Java Servlet]
+link:./20_servlet_architecture.adoc[다음: Servlet Architecture]
