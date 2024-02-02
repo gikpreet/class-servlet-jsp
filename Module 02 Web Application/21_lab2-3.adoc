@@ -1,0 +1,38 @@
+= Lab 2-3: 간단한 Java Servlet 프로그램 작성
+
+== Tomcat 설치
+
+=== Windows에서 Tomcat 설치
+
+
+=== macOS에서 Tomcat 설치
+
+1. 터미널을 실행합니다.
+2. 아래 명령을 실행하여 homebrew를 업데이트 합니다.
++
+----
+$ brew update
+----
++
+3. 아래 명령을 실행하여 tomcat 9 버전을 설치합니다.
++
+----
+$ brew install tomcat@9
+----
++
+4. 아래 명령을 실행하여 설치된 tomcat 디렉토리를 확인합니다.
++
+----
+% ls -l /opt/homebrew/etc/tomcat@9
+total 464
+-rw-------  1 gikpreet  admin   12953  2  2 14:05 catalina.policy
+-rw-------  1 gikpreet  admin    7630  2  2 14:05 catalina.properties
+-rw-------  1 gikpreet  admin    1400  2  2 14:05 context.xml
+-rw-------  1 gikpreet  admin    1149  2  2 14:05 jaspic-providers.xml
+-rw-------  1 gikpreet  admin    2313  2  2 14:05 jaspic-providers.xsd
+-rw-------  1 gikpreet  admin    4144  2  2 14:05 logging.properties
+-rw-------  1 gikpreet  admin    7856  2  2 14:05 server.xml
+-rw-------  1 gikpreet  admin    2756  2  2 14:05 tomcat-users.xml
+-rw-------  1 gikpreet  admin    2558  2  2 14:05 tomcat-users.xsd
+-rw-------  1 gikpreet  admin  172951  2  2 14:05 web.xml
+----
