@@ -92,3 +92,8 @@ image:./images/image29.png[]
 2. 왼쪽에서 **Extension(확장)**을 클릭하고 **Community Server Connectors**를 검색하여 설치합니다.
 +
 image:./images/image30.png[]
+3. 왼쪽의 Explorer(탐색기) 패널에서 **SERVERS**를 확장합니다.
++
+image:./images/image31.png[]
++
+4. **SERVERS** 구역에서 **Create New Server...** 버튼을 클릭합니다.
