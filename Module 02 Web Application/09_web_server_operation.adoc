@@ -1,0 +1,17 @@
+= Web Server 동작
+
+1. Web Server에 호스팅 파일 저장
+** Web Server는 인터넷에 연결되어 항상 실행중이어야 함
+** 항상 같은 IP주소를 가지고 있어야 함
+2. HTTP를 통한 통신
+** HTTP는 문자로 된 독립적인 프로토콜
+** Textual, Stateless
+** 클라이언트는 HTTP 요청을 만들어 서버에 전달하고 서버는 요청에 응답함
+** 클라이언트는 URL 파일을 제공해야 함
+** 웹 서버는 최소한의 에러 메시지를 포함하여 모든 HTTP 요청에 응답해야 함
+
+---
+
+웹 서버는 처음에 HTML 문서라고
+
+https://developer.mozilla.org/ko/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server
