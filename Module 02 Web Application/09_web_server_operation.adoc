@@ -12,6 +12,15 @@
 
 ---
 
-웹 서버는 처음에 HTML 문서라고
+== 호스팅 파일 배치
+
+웹 서버는 주로 HTML 문서들로 구성된 웹 사이트의 파일들과 이미지, CSS Stylesheet, JavaScript 파일, 폰드, 비디오들로 구성된 파일들을 저장하고 있어야 합니다. 서비스되는 웹 서버는 아래 사항들을 만족해야 합니다:
+
+* 웹 서버는 항상 실행중이어야 합니다.
+* 항상 인터넷과 연결되어 있어야 합니다.
+* 항상 같은 IP 주소로 노출되어 클라이언트가 동일한 주소로 연결할 수 있어야 합니다.
+* 유지보수 되어야 합니다. (일반적으로 서비스 제공자에 의해 유지보수 됩니다)
+
+
 
 https://developer.mozilla.org/ko/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server
