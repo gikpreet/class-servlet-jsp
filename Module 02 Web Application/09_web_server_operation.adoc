@@ -21,6 +21,4 @@
 * 항상 같은 IP 주소로 노출되어 클라이언트가 동일한 주소로 연결할 수 있어야 합니다.
 * 유지보수 되어야 합니다. (일반적으로 서비스 제공자에 의해 유지보수 됩니다)
 
-
-
 https://developer.mozilla.org/ko/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server
