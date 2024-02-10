@@ -137,4 +137,71 @@ image:./images/image30.png[image, width=400px]
 +
 image:./images/image34.png[]
 +
-5. 
+5. Command Parett에서 **No, user server on disk**를 클릭합니다.
++
+image:./images/image35.png[]
++
+6. **폴더 선택** 창에서 tomcat을 설치한 c:\apache-tomcat-<version number> 폴터를 선택하고 **Select desired server location** 버튼을 클릭합니다.
+7. Server 설정 탭에서 **Server Name**에 tomcat의 버전을 입력하고 **Finish** 버튼을 클릭합니다.
++
+image:./images/image36.png[]
++
+8. 등록된 tomcat을 확인합니다.
++
+image:./images/image37.png[]
+
+
+== Visual Studio Code에서 Servlet 프로그램 개발
+
+=== 프로젝트 생성
+
+1. Visual Studio Code를 실행합니다.
+2. **View(보기)** 메뉴에서 **Command Paratte(명령 팔레트)**를 클릭합니다.
+3. Create Java Project.. 를 클릭합니다.
++
+image:./images/image15.png[]
++
+4. **Select the project type**에서 **Maven**을 선택합니다.
++
+image:./images/image39.png[]
++
+5. **Select the Archetype**에서 **maven-archetype-webapp**을 선택합니다.
++
+image:./images/image17.png[]
++
+6. **Select version if maven-archetype-webapp**에서 1.4를 선택합니다.
++
+image:./images/image38.png[]
++
+7. **New Maven Project**에서 com.nhnacademy를 입력하고 Enter키를 누릅니다.
++
+image:./images/image18.png[]
++
+8. **New Maven Project**에서 **firstservlet**를 입력하고 Enter키를 누릅니다.
++
+image:./images/image40.png[]
++
+9. 폴더 선택 대화상자에서 프로젝트가 위치할 폴더를 선택하고 **Select Destination Folder** 버튼을 클릭합니다.
+10. 프로젝트가 생성되는 도중, Visual Studio 터미널창에서 **Define value for property 'version' 1.0-SNAPSHOT:** 에서 Enter 키를 누릅니다.
+11. **Y: :** 에서 Enter 키를 누릅니다.
+12. 프로젝트 생성이 완료되면, 오른쪽 아래 프로젝트 정보 창에서 **Open** 버튼을 클릭합니다.
++
+image:./images/image41.png[]
+
+== 의존성 작성
+
+1. Explorer에서 pom.xml 파일을 클릭해서 엽니다.
++
+image:./images/image42.png[]
++
+2. pom.xml 파일의 dependency 요소에 **jakarta.servlet-api** 의존성을 추가합니다.
++
+[source, xml]
+----
+   <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>4.0.4</version>
+      <scope>provided</scope>
+  </dependency>
+----
