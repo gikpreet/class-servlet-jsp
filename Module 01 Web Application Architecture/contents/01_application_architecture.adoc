@@ -1,0 +1,18 @@
+= Module 01 Application Architecture
+
+웹 애플리케이션 아키텍처는 웹 클라이언트와 서버간의 연결에 대한 설명 방법입니다. 웹 애플리케이션 아키텍처는 애플리케이션 내부의 요소들이 상호간에 어떻게 소통하는지를 설명합니다. 
+
+사용자가 Egde, Chrome, Firefox등의 웹 브라우저에서 웹 서버로 요청을 수행하면 애플리케이션의 다양한 요소들이 상호작용하여 응답을 만들고 수행합니다. 웹 애플리케익션 아키텍처는 Backend를 구성하는 요소들이 상호작용을 유지하도록 서로를 연관짓는 뼈대라고 할 수 있습니다.
+
+이 단원에서는 웹 애플리케이션 아키텍처에 대해 알아봅니다.
+
+== Table of Contents
+
+* 애플리케이션 아키텍처
+* Web Server
+* CGI(Common Gateway Interface)
+* Servlet
+* Java EE Architecture
+* WAS
+
+link:./02_overview_application_architecture.adoc[다음: Application Architecture 개요]

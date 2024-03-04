@@ -1,4 +1,4 @@
-= Application Architecture
+= Application Architecture 개요
 
 * 애플리케이션(Application)을 설계하고 구축하는데 사용하는 패턴과 기술
 ** 애플리케이션 구축시 따라야 할 로드맵과 모범 사례를 제공
