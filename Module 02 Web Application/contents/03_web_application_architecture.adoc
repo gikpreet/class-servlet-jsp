@@ -8,7 +8,7 @@
 ** 씬 클라이언트(Thin Client)를 사용하여 클라이언트의 성능에 문제를 일으키지 않음
 ** 프로그램의 변경과 유지보수가 쉬움
 
-image:./images/image01.png[]
+image:../images/image01.png[]
 
 ---
 

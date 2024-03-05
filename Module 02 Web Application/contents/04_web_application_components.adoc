@@ -5,13 +5,34 @@
 ** 프리젠테이선 구성요소(클라이언트)와 비즈니스 로직 구성요소(웹 서버 또는 API 서버)가 통신할 수 있도록 함
 * 모든 사용자의 요청에 대한 유효성을 검증함
 * 권한 기반 접근(인증)
-* 웹 애플리케이션 구성요소
-** Presentation Tier
-*** HTML 문서, 이미지 파일, javascript(객체) 등
-** Business Logic Tier
-*** Apache, IIS, NGINX등의 웹 서버
+* Application UI (Presentation Tier 또는 Layer)
+** 웹 브라우저에서 보여질 문서, 이미지, 스크립트 등
+** HTML documents / Image Files / JavaScript
+* Business Logic (Business Logic Tier 또는 Layer)
+** Web Server와 동적 웹을 생성하는 Web Application Server
+** Apache / Nginx / IIS / Tomcat 등
+* Database (Data Tier 또는 Layer)
+** 데이터베이스 관리 시스템
+** Oracle, Microsoft SQL Server, MySQL, PostgreSQL, NoSQL 등
 
 ---
+
+웹 애플리케이션은 WWW(World Wide Web)을 기반으로 실행되는 프로그램을 말하며, 기본적으로 HTTP 프로토콜을 통해 통신합니다. 웹 애플리케이션의 기본적인 동작은 아래와 같습니다.
+
+1. 클라이언트(일반적으로 웹 브라우저)가 서버에 요청을 보냄
+2. 요청을 받은 웹 서버는 최초의 응답을 보내고, 응답을 생성함
+3. 해당 요청이 동적 웹 생성을 필요로 하면, 동적 웹 생성을 담당하는 Web Application Server에 요청을 넘김
+4. Web Application Server의 작업이 완료되면 생성된 응답을 웹 서버로 전송
+5. 웹 서버는 생성된 응답을 클라이언트에 전송
+
+[%header, cols="1, 4"]
+|===
+|구성 요소|설명
+|웹 브라우저|사용자(클라이언트)가 웹 서버에 응답을 요청하고, 응답 결과를 화면에 보여주는 씬 클라이언트(Thin Client)
+|웹 서버|웹 브라우저의 요청을 받아 결과를 웹 브라우저로 응답하며, 주로 정적인 페이지 처리를 담당함
+|Web Application Server(WAS)|동적으로 응답 결과를 생성
+|데이터베이스|데이터 정보를 저장
+|===
 
 link:./03_web_application_architecture[이전: Web Application 구성요소] +
 link:./05_cs_vs_web.adoc[다음: Client-Server와 Web Application 비교]

@@ -35,12 +35,12 @@ image:../images/image06.png[]
 * Application UI (Presentation Tier 또는 Layer)
 ** 웹 브라우저에서 보여질 문서, 이미지, 스크립트 등
 ** HTML documents / Image Files / JavaScript
-* Business Logic
+* Business Logic (Business Logic Tier 또는 Layer)
 ** Web Server와 동적 웹을 생성하는 Web Application Server
 ** Apache / Nginx / IIS / Tomcat 등
-* Database
+* Database (Data Tier 또는 Layer)
 ** 데이터베이스 관리 시스템
-** Oracle, Microsoft SQL Server, MySQL, PostgreSQL 등
+** Oracle, Microsoft SQL Server, MySQL, PostgreSQL, NoSQL 등
 
 link:./07_microservice.adoc[이전: 마이크로서비스 아키텍처] +
 link:./09_review.adoc[다음: 검토]

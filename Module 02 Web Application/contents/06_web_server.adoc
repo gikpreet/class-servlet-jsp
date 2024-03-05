@@ -7,7 +7,9 @@ Web Server는 웹 브라우저와 같은 클라이언트로 부터 HTTP 요청�
 == Table of Contents
 
 1. Web Server 개요
-2. Web Server의 종류
+2. Web Server의 기능
+3. Web Server의 동작
+4. Web Server의 종류
 
 link:./05_cs_vs_web.adoc[이전: Client-Server와 Web Application 비교] +
 link:./07_overview_web_server.adoc[다음: Web Server 개요]
