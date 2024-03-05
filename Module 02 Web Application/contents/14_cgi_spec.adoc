@@ -14,6 +14,8 @@
 
 ---
 
+CGI는 HTTP 프로토콜 기반의 웹 서버와 다양한 언어로 구현된 프로그램 간의 데이터를 교환하는 표준 스펙이자 Interface 입니다.
+
 CGI Version 1.1
 https://datatracker.ietf.org/doc/html/rfc3875
 

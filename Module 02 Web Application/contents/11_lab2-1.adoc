@@ -14,7 +14,7 @@ link:./https://nginx.org/en/download.html[https://nginx.org/en/download.html]
 +
 2. Stable version Nginx 다운로드 링크를 클릭하여 다운로드합니다.
 +
-image:../images/image03.png[]
+image:../images/image03.png[width=600]
 +
 3. 다운로드한 파일을 c:\nginx 폴더에 압축 해제합니다.
 4. 명령 프롬프트를 실행합니다.
@@ -61,7 +61,7 @@ Commercial support is available at
 +
 8. 웹 브라우저를 실행하고, 주소창에 localhost를 입력하고 이동하여 실행중인 Nginx를 확인합니다.
 +
-image:../images/image04.png[]
+image:../images/image04.png[width=600]
 +
 9. 아래 명령을 실행하여 c:\nginx-<version number> 폴더에 hello.html 파일을 생성합니다.
 +
@@ -89,7 +89,7 @@ image:../images/image04.png[]
 +
 12. 웹 브라우저를 실행하고, 주소창에 localhost/hello.html를 입력하고 이동한 후, 페이지를 확인합니다.
 +
-image:../images/image06.png[]
+image:../images/image06.png[width=600]
 +
 13. 아래 명령을 실행하여 Nginx 웹 서버를 종료합니다.
 +
@@ -169,7 +169,7 @@ Commercial support is available at
 +
 7. 웹 브라우저를 실행하고, 주소창에 localhost:8080을 입력하고 이동하여 실행중인 Nginx를 확인합니다.
 + 
-image:../images/image05.png[]
+image:../images/image05.png[width=600]
 +
 8. 아래 명령을 실행하여 Nginx 패키지의 설치 정보를 확인합니다.
 +
@@ -231,7 +231,7 @@ build-error: 17 (30 days)
 ----
 13. 웹 브라우저를 실행하고, 주소창에 localhost:8080/hello.html를 입력하고 이동한 후, 페이지를 확인합니다.
 +
-image:../images/image07.png[]
+image:../images/image07.png[width=600]
 +
 14. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
 +
@@ -293,13 +293,8 @@ Commercial support is available at
 +
 6. 웹 브라우저를 실행하고, 주소창에 localhost:8080을 입력하고 이동하여 실행중인 Nginx를 확인합니다.
 + 
-
+image:../images/image43.png[width=600]
 +
-7. 아래 명령을 실행하여 
-
-
-
-
 8. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
 +
 ----
@@ -312,9 +307,9 @@ Stopping `nginx`... (might take a while)
 |===
 |**참고** Ubuntu Linux에서 systemctl을 사용하는 Nginx 시작과 종료 명령은 다음과 같습니다. +
 ----
-sudo systemctl start nginx      # 시작 +
-sudo systemctl stop nginx       # 종료 +
-sudo systemctl restart nginx    # 재시작 +
+sudo systemctl start nginx      # 시작 
+sudo systemctl stop nginx       # 종료 
+sudo systemctl restart nginx    # 재시작 
 sudo systemctl reload nginx     # 다시 로드
 ----
 
@@ -329,4 +324,4 @@ $ sudo nginx -s reload  # 다시 로드
 |===
 
 link:./09_types_web_server.adoc[이전: Web Server의 종류] +
-link:./11_cgi.adoc[다음: CGI(Common Gateway Interface)]
+link:./12_cgi.adoc[다음: CGI(Common Gateway Interface)]
