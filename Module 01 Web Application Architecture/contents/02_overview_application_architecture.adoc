@@ -44,3 +44,6 @@
 애플리케이션 아키텍처에는 Frontend와 Backend 서비스가 모두 있습니다. Frontend 개발이 애플리케이션에서 제공하는 사용자 경험(User experience)에 초점을 맞춘다면, Backend 개발은 데이터 및 서비스, 애플리케이션을 작동하게 하는 기타 기존 시스템에 대한 액세스를 제공하는데 초점을 맞춥니다.
 
 https://www.redhat.com/ko/topics/cloud-native-apps/what-is-an-application-architecture
+
+link:./01_application_architecture.adoc[이전: Module 01 Application Architecture] +
+link:./03_client_server.adoc[다음: 클라이언트-서버 아키텍처]
