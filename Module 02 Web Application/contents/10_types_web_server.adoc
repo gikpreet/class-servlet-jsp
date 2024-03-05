@@ -51,7 +51,7 @@ Apache HTTP 서버는 아파치 소프트웨어 재단에서 관리하는 오픈
 
 ASP(Active Server Pages) 스크립트 언어를 기본적으로 사용할 수 있도록 내장하였으며, 다양한 인증모드를 제공합니다.
 
-== 2023년 웹 서버 순위
+== 2023년 웹 서버 순위footnote:[W3Tech, https://w3techs.com/technologies/overview/web_server]
 
 [%header, cols="1,2,2" width=50%]
 |===
@@ -67,8 +67,6 @@ ASP(Active Server Pages) 스크립트 언어를 기본적으로 사용할 수 �
 |9|Caddy|0.2%
 |10|IdeaWebServer|0.1%
 |===
-
-> 출처: W3Tech, https://w3techs.com/technologies/overview/web_server
 
 link:./08_web_server_functions.adoc[이전: Web Server의 기능] +
 link:./10_lab2-1.adoc[다음: Lab 2-1 Nginx Web Server 설치]

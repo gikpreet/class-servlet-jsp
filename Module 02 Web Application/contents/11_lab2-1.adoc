@@ -14,7 +14,7 @@ link:./https://nginx.org/en/download.html[https://nginx.org/en/download.html]
 +
 2. Stable version Nginx 다운로드 링크를 클릭하여 다운로드합니다.
 +
-image:./images/image03.png[]
+image:../images/image03.png[]
 +
 3. 다운로드한 파일을 c:\nginx 폴더에 압축 해제합니다.
 4. 명령 프롬프트를 실행합니다.
@@ -61,7 +61,7 @@ Commercial support is available at
 +
 8. 웹 브라우저를 실행하고, 주소창에 localhost를 입력하고 이동하여 실행중인 Nginx를 확인합니다.
 +
-image:./images/image04.png[]
+image:../images/image04.png[]
 +
 9. 아래 명령을 실행하여 c:\nginx-<version number> 폴더에 hello.html 파일을 생성합니다.
 +
@@ -89,7 +89,7 @@ image:./images/image04.png[]
 +
 12. 웹 브라우저를 실행하고, 주소창에 localhost/hello.html를 입력하고 이동한 후, 페이지를 확인합니다.
 +
-image:./images/image06.png[]
+image:../images/image06.png[]
 +
 13. 아래 명령을 실행하여 Nginx 웹 서버를 종료합니다.
 +
@@ -169,7 +169,7 @@ Commercial support is available at
 +
 7. 웹 브라우저를 실행하고, 주소창에 localhost:8080을 입력하고 이동하여 실행중인 Nginx를 확인합니다.
 + 
-image:./images/image05.png[]
+image:../images/image05.png[]
 +
 8. 아래 명령을 실행하여 Nginx 패키지의 설치 정보를 확인합니다.
 +
@@ -231,7 +231,7 @@ build-error: 17 (30 days)
 ----
 13. 웹 브라우저를 실행하고, 주소창에 localhost:8080/hello.html를 입력하고 이동한 후, 페이지를 확인합니다.
 +
-image:./images/image07.png[]
+image:../images/image07.png[]
 +
 14. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
 +
