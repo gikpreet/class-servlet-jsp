@@ -7,7 +7,7 @@
 * 대부분의 웹 서버가 Fast CGI를 지원
 ** Apache, Nginx, IIS 등
 
-image:./images/image12.png[]
+image:../images/image12.png[]
 
 ---
 

@@ -16,13 +16,13 @@ https://maven.apache.org/download.cgi
 +
 2. Files 구역에서 Binary zip archive를 다운로드 합니다.
 +
-image:./images/image13.png[]
+image:../images/image13.png[]
 +
 3. 다운로드 한 파일을 압축해제 합니다. 
 4. 압축이 해제된 폴드에서 apache-maven-<version>-bin 폴더 내의 apache-maven-<version> 폴더를 C 드라이브 루트로 복사합니다.
 5. 복사된 폴더는 아래와 같은 구조이며, 4개의 하위 폴더를 포함하고 있어야 합니다.
 +
-image:./images/image14.png[]
+image:../images/image14.png[]
 
 === macOS에서 Apache Maven 설치
 
@@ -168,6 +168,7 @@ lrwxrwxrwx 1 root root   18 10월 20 17:39 m2.conf -> /etc/maven/m2.conf
 2. **File (파일)** 메뉴에서 **Preferance (기본 설정)**을 클릭합니다.
 3. Settings 탭에서 Search settins에서 Maven을 입력하고 설정을 검색합니다.
 4. **Java > Configuration > Maven: User Settings** 설정에는 Apache Maven의 설정 파일인 settings.xml 파일의 위치가 구성되어야 합니다. settings.xml 파일의 위치를 아래와 같이 설정합니다. +
++
 **Windows Visual Studio Code 에서**
 +
 ----
@@ -187,6 +188,7 @@ C:\apache-maven-3.9.6\conf\settings.xml
 ----
 +
 5. **Maven > Excutable: Path**에는 Apache Maven의 실행 경로인 mvn.cmd(Windows) 또는 mvn(macOS 또는 Linux) 파일의 위치가 구성되어야 합니다. mvn.cmd/mvn 파일의 위치를 아래와 같이 설정합니다. +
++
 **Windows Visual Studio Code 에서**
 +
 ----
@@ -215,28 +217,28 @@ C:\apache-maven-3.9.6\bin\mvn.cmd
 2. **View(보기)** 메뉴에서 **Command Palette(명령 팔레트)**를 클릭합니다.
 3. Command Palette에서 Java: Create Java Project를 검색하고 선택합니다.
 +
-image:./images/image15.png[]
+image:../images/image15.png[]
 +
 4. Select the project type에서 **Maven**을 선택합니다.
 +
-image:./images/image16.png[]
+image:../images/image16.png[]
 +
 5. Select an archetype에서 **No Archetype**을 선택합니다.
 +
-image:./images/image17.png[]
+image:../images/image17.png[]
 +
 6. group id로 **com.nhnacademy**를 입력하고 Enter 키를 누릅니다.
 +
-image:./images/image18.png[]
+image:../images/image18.png[]
 +
 7. artifact Id로 **cgi**를 입력하고 Enter 키를 누릅니다.
 +
-image:./images/image19.png[]
+image:../images/image19.png[]
 +
 8. 폴더 선택 윈도우에서 프로젝트가 위치할 폴더를 선택하고 **Select Destination Folder** 버튼을 클릭합니다.
 9. 아래쪽 정보 팡에서 Open 버튼을 클릭합니다.
 +
-image:./images/image20.png[]
+image:../images/image20.png[]
 +
 10. 신뢰 정보 경고 창에서 Yes, I trust the authors 버튼을 클릭합니다.
 

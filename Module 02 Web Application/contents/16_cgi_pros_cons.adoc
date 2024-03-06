@@ -9,7 +9,7 @@
 ** Http 요청마다 새로운 프로세스를 만들어 서버 메모리를 사용합니다.
 ** 데이터가 메모리에 캐시 될 수 없다.
 
-image:./images/image09.png[]
+image:../images/image09.png[]
 
 ---
 

@@ -4,11 +4,11 @@
 ** JVM은 Java Program을 실행할 수는 있음
 ** 웹 서버와 Java Application Server는 통신할 수 없음
 +
-image:./images/image10.png[]
+image:../images/image10.png[]
 +
 ** 웹 서버와 Java Application 사이의 게이트웨이(JCGI)가 필요
 +
-image:./images/image11.png[]
+image:../images/image11.png[]
 +
 
 ---

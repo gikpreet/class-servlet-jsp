@@ -295,7 +295,7 @@ Commercial support is available at
 + 
 image:../images/image43.png[width=600]
 +
-8. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
+7. 아래 명령을 실행하여 실행중인 Nginx를 중지합니다.
 +
 ----
 % brew services stop nginx
