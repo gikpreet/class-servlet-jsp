@@ -19,5 +19,5 @@ CGI는 HTTP 프로토콜 기반의 웹 서버와 다양한 언어로 구현된 �
 CGI Version 1.1
 https://datatracker.ietf.org/doc/html/rfc3875
 
-link:./12_overview_cgi.adoc[이전: CGI 개요] +
-link:./14_cgi_pros_cons.adoc[다음: CGI 장/단점]
+link:./13_overview_cgi.adoc[이전: CGI 개요] +
+link:./15_cgi_pros_cons.adoc[다음: CGI 장/단점]

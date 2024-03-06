@@ -68,5 +68,5 @@ ASP(Active Server Pages) 스크립트 언어를 기본적으로 사용할 수 �
 |10|IdeaWebServer|0.1%
 |===
 
-link:./08_web_server_functions.adoc[이전: Web Server의 기능] +
-link:./10_lab2-1.adoc[다음: Lab 2-1 Nginx Web Server 설치]
+link:./09_web_server_operation.adoc[이전: Web Server 동작] +
+link:./11_lab2-1.adoc[다음: Lab 2-1 Nginx Web Server 설치]

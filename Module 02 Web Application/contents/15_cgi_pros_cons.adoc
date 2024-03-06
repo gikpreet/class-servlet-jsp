@@ -13,5 +13,5 @@ image:../images/image09.png[]
 
 ---
 
-link:./13_cgi_spec[이전: CGI Specification] +
-link:./15_java_cgi_program.adoc[다음: Java CGI Program]
+link:./14_cgi_spec[이전: CGI Specification] +
+link:./16_lab2-2.adoc[다음: Lab 2-2 Apache 기반 간단한 CGI 프로그램 작성]

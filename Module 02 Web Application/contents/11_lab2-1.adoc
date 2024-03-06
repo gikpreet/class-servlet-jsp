@@ -323,5 +323,5 @@ $ sudo nginx -s reload  # 다시 로드
 ----
 |===
 
-link:./09_types_web_server.adoc[이전: Web Server의 종류] +
+link:./10_types_web_server.adoc[이전: Web Server의 종류] +
 link:./12_cgi.adoc[다음: CGI(Common Gateway Interface)]

@@ -632,3 +632,5 @@ image:../images/image47.png[width=450]
 $ sudo systemctl restart apache2
 ----
 |===
+
+link:./15_cgi_pros_cons.adoc[이전: CGI 장단점]
