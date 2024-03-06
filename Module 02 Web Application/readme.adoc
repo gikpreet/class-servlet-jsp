@@ -16,6 +16,6 @@ link:./contents/01_web_application.adoc[Module 02: Web Application]
 ** link:./contents/13_overview_cgi.adoc[CGI 개요]
 ** link:./contents/14_cgi_spec.adoc[CGI Specification]
 ** link:./contents/15_cgi_pros_cons.adoc[CGI 장/단점]
-* link:./contents/16_lab2-1.adoc[Lab 2-2 Apache 기반 간단한 CGI 프로그램 작성]
+* link:./contents/16_lab2-2.adoc[Lab 2-2 Apache 기반 간단한 CGI 프로그램 작성]
 ** link:./contents/16_fast_cgi.adoc[Fast CGI]
 
