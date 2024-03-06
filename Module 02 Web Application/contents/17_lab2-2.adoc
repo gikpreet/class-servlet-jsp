@@ -17,9 +17,17 @@
 +
 2. nginx 워커 프로세스가 발견되면, Nginx가 실행중임을 의미합니다.
 +
-+
 ----
 % ps -ef | grep nginx
+    0 64921     1   0  6:37PM ??         0:00.03 nginx: master process /opt/homebrew/opt/nginx/bin/nginx -g daemon off;  
+   -2 64924 64921   0  6:37PM ??         0:00.00 nginx: worker process  
+  502 65055 71819   0  6:38PM ttys000    0:00.00 grep nginx
+----
++
+3. 실행중이면, 아래 명령을 실행하여 Nginx를 종료합니다.
++
+----
+% sudo brew services stop nginx
 ----
 
 macOS에는 기본적으로 Apache가 설치되어 있습니다. 확인을 위해 아래 절차에 따릅니다.
