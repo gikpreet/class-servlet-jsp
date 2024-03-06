@@ -2,9 +2,189 @@
 
 이 연습에서는 Apache 웹 서버상에서 동작하는 간단한 CGI 프로그램을 작성합니다.
 
-https://m.blog.naver.com/icharley/221090197788
+
+== macOS에서 간단한 CGI 프로그램 작성
+
+이 연습에서는 macOS에서 간단한 CGI 프로그램을 작성하는 것을 연습합니다.
+
+=== 환경 확인
+
+macOS에는 기본적으로 Apache가 설치되어 있습니다. 확인을 위해 아래 절차에 따릅니다.
+
+1. 터미널을 실행하고 아래 명령을 실행하여 설치된 Apache의 버전을 확인합니다.
++
+----
+% apachectl -v
+Server version: Apache/2.4.56 (Unix)
+Server built:   Nov 12 2023 00:47:49
+----
++
+2. 아래 명령을 실행하여 Apache를 시작합니다.
++
+----
+% sudo apachectl start
+----
++
+3. 웹 브라우저를 실행하고 주소창에 http://localhost/ 를 입력하고 이동하여 Apache 웹 서버의 실행을 확인합니다.
++
+image:../images/image48.png[width=450]
+
+=== 환경 구성
+
+1. /private/etc/apache2/httpd.conf 파일을 관리자 모드로 열고 내용을 확인합니다.
+a. 기본 문서 디렉토리가 **/Library/WebServer/Documents** 인 것을 확인합니다.
++
+----
+DocumentRoot "/Library/WebServer/Documents"
+<Directory "/Library/WebServer/Documents">
+----
++
+b. 오류 로그의 위치를 확인합니다.
++
+----
+ErrorLog "/private/var/log/apache2/error_log"
+----
++
+c. CGI 디렉토리를 확인합니다.
++
+----
+<Directory "/Library/WebServer/CGI-Executables">
+    AllowOverride None
+    Options None
+    Require all granted
+</Directory>
+----
++
+2. /private/etc/apache2/httpd.conf 파일에서 아래 라인을 찾아 주석을 해제합니다.
++
+----
+LoadModule cgid_module libexec/apache2/mod_cgid.so
+LoadModule cgi_module libexec/apache2/mod_cgi.so
+----
++
+3. /private/etc/apache2/httpd.conf 파일에서 아래 라인을 찾아 주석을 해제합니다.
++
+----
+LoadModule perl_module libexec/apache2/mod_perl.so
+----
++
+4. **<Directory "/Library/WebServer/CGI-Executables">** 요소를 찾아 아래와 같이 수정합니다.
++
+[source, xml]
+----
+<Directory "/Library/WebServer/CGI-Executables">
+    AllowOverride None
+    Options +ExecCGI 
+    AddHandler cgi-script .pl .py .cgi .sh
+    Require all granted
+</Directory>
+----
++
+5. 파일을 저장합니다.
+
+=== CGI 프로그램 작성
+
+==== Bash를 이용한 CGI 프로그램 작성
+
+1. 터미널에서 **/Library/WebServer/CGI-Executables** 디렉토리로 이동하고, 아래 명령을 실행하여 cgi-bash.sh 파일을 작성합니다.
++
+----
+% sudo touch cgi-bash.sh
+----
++
+2. 아래 명령을 수행하여 생성한 cgi-bash.sh 파일의 권한을 변경합니다.
++
+----
+% sudo chmod a+x cgi-bash.sh
+----
++
+3. 생성된 cgi-bash.sh 파일을 관리자 모드로 열고 아래와 같이 수정합니다.
++
+[source, bash]
+----
+#!/bin/bash
+
+echo "content-type: text/html\n\r\n"
+echo ''
+echo 'Hello, CGI!'
+----
++
+4. 웹 브라우저를 실행하고 주소창에 http://localhost/cgi-bin/cgi-bash.sh 를 입력하고 이동하여 Apache 웹 서버의 실행을 확인합니다.
++
+image:../images/image49.png[width=450]
+
+==== Python을 이용한 CGI 프로그램 작성
+
+1. 터미널에서 **/Library/WebServer/CGI-Executables** 디렉토리로 이동하고, 아래 명령을 실행하여 cgi-python.py 파일을 작성합니다.
++
+----
+% sudo touch cgi-python.py
+----
++
+2. 아래 명령을 수행하여 생성한 cgi-python.py 파일의 권한을 변경합니다.
++
+----
+% sudo chmod a+x bash-cgi.sh
+----
++
+3. 생성된 cgi-python.sh 파일을 관리자 모드로 열고 아래와 같이 수정합니다.
++
+[source, python]
+----
+#!/opt/anaconda3/bin/python
+
+import cgi;
+import cgitb;cgitb.enable()
+
+print("Content-Type: text/html\n\r\n")
+print("<h2>Hello, CGI with Python</h2>")
+----
++
+> 첫 줄의 Shebang 명령은 사용자의 python 프로그램이 존재하는 위치이어야 합니다.
++
+4. 웹 브라우저를 실행하고 주소창에 http://localhost/cgi-bin/cgi-python.py 를 입력하고 이동하여 Apache 웹 서버의 실행을 확인합니다.
++
+image:../images/image50.png[width=450]
+
+==== C 언어를 이용한 CGI 프로그램 작성
+
+1. 터미널에서 **/Library/WebServer/CGI-Executables** 디렉토리로 이동하고, 아래 명령을 실행하여 cgi-c.c 파일을 작성합니다.
++
+----
+% sudo touch cgi-c.c
+----
++
+2. 아래 명령을 수행하여 생성한 cgi-c.c 파일의 권한을 변경합니다.
++
+----
+% sudo chmod 644 bash-cgi.sh
+----
++
+3. 생성된 cgi-c.c 파일을 관리자 모드로 열고 아래와 같이 수정합니다.
++
+[source, c]
+----
+#include <stdio.h>
+
+int main() {
+    printf("Content-Type: text/html\n\r\n");
+    printf("<h2>Hello, CGI with C language</h2>");
+}
+----
++
+4. 터미널에서 아래 명령을 실행하여 작성한 cgi-c.c 파일을 cgi-c.cgi 로 컴파일합니다.
++
+----
+% sudo gcc cgi-c.c -o cgi-c.cgi
+----
++
+5. 웹 브라우저를 실행하고 주소창에 http://localhost/cgi-bin/cgi-c.cgi 를 입력하고 이동하여 Apache 웹 서버의 실행을 확인합니다.
++
+image:../images/image51.png[width=450]
 
 == Linux(Ubuntu)에서 간단한 CGI 프로그램 작성
+
+이 연습에서는 Ubuntu Linux에서 간단한 CGI 프로그램을 작성하는 것을 연습합니다.
 
 === 환경 확인
 
@@ -129,13 +309,13 @@ $ sudo systemctl restart apache2
 
 ==== Bash를 이용한 CGI 프로그램 작성
 
-1. 터미널에서 아래 명령을 실행하여 bash-cgi.sh 파일을 생성합니다.
+1. 터미널에서 /var/www/cgi-bin 디렉토리로 이동하고, 아래 명령을 실행하여 cgi-bash.sh 파일을 생성합니다.
 +
 ----
 $ sudo touch cgi-bash.sh
 ----
 +
-2. 아래 명령을 수행하여 생성한 bash-cgi.sh 파일의 권한을 변경합니다.
+2. 아래 명령을 수행하여 생성한 cgi-bash.sh 파일의 권한을 변경합니다.
 +
 ----
 $ sudo chmod o+x cgi-bash.sh
@@ -160,7 +340,7 @@ image:../images/image45.png[width=450]
 
 ==== Python을 이용한 CGI 프로그램 작성
 
-1. 터미널에서 아래 명령을 실행하여 cgi-python.py 파일을 생성합니다.
+1. 터미널에서 터미널에서 /var/www/cgi-bin 디렉토리로 이동하고, 아래 명령을 실행하여 cgi-python.py 파일을 생성합니다.
 +
 ----
 $ sudo touch cgi-python.py
@@ -191,7 +371,7 @@ image:../images/image46.png[width=450]
 
 ==== C 언어를 사용한 CGI 프로그램 작성
 
-1. 터미널에서 아래 명령을 실행하여 cgi-c.c 파일을 생성합니다.
+1. 터미널에서 /var/www/cgi-bin 디렉토리로 이동하고, 아래 명령을 실행하여 cgi-c.c 파일을 생성합니다.
 +
 ----
 $ sudo touch cgi-c.c
