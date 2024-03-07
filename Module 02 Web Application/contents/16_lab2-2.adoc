@@ -633,4 +633,5 @@ $ sudo systemctl restart apache2
 ----
 |===
 
-link:./15_cgi_pros_cons.adoc[이전: CGI 장단점]
+link:./15_cgi_pros_cons.adoc[이전: CGI 장단점] +
+link:./17_java_cgi_program.adoc[다음: Java CGI 프로그램]

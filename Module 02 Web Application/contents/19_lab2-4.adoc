@@ -1,4 +1,4 @@
-= Lab 2-2 간단한 Java CGI 애플리케이션 작성
+= Lab 2-4 간단한 Java CGI 애플리케이션 작성 - 2
 
 이 연습에서는 간단한 Java CGI 애플리케이션을 작성합니다. 아래 절차에 따릅니다.
 
@@ -289,7 +289,7 @@ image:../images/image20.png[]
 
 1. Visual Studio Code의 Exploer 패널에서 cgi > src > main > java \ com \ nhnacademy를 클릭하고 새로 만들기 버튼을 클릭한 후 CgiArgs.java 파일을 생성합니다.
 +
-image:./images/image21.png[]
+image:../images/image21.png[]
 +
 2. CgiArgs 클래스는 JCommander 패키지의 Parameter 어노테이션을 사용합니다. package 선언 아래에 아래 import 문을 선언합니다.
 +
@@ -390,6 +390,7 @@ public class Main {
 6. 생성한 파일을 열고 아래와 같이 실행 스크립트를 작성합니다.
 +
 **Windows(java.cgi.bat)** +
++
 ----
 @ECHO OFF
 
@@ -404,6 +405,7 @@ java -jar ./target/cgi-shade.jar  ^
 ----
 +
 **macOS, Linux(java.cgi.sh)**
++
 ----
 java -jar ../../target/cgi-shade.jar  \
      -content-type text/html \
@@ -415,33 +417,34 @@ java -jar ../../target/cgi-shade.jar  \
      -body hello
 ----
 +
-image:./images/image24.png[]
+image:../images/image24.png[]
 
 === 프로젝트 빌드
 
 1. Visual Studio Code의 Terminal 메뉴에서 **Run Build Task(빌드 작업 실행)**를 클릭합니다.
 +
-image:./images/image22.png[]
+image:../images/image22.png[]
 +
 2. Command Palette에서 **java (build): Build WOrkspace**를 클릭합니다.
 +
-image:./images/image23.png[]
+image:../images/image23.png[]
 +
 3. Visual Studio Code 오른쪽의 Exploer 패널에서 target > classes \ com \ nhnacademy 아래에서 빌드된 .class 파일을 확인합니다.
 +
-image:./images/image25.png[]
+image:../images/image25.png[]
 +
 4. Visual Studio Code 오른쪽 아래의 **MAVEN** 패널을 확장하고 **cgi** 항목을 마우스 오른쪽 클릭한 후 **Run Maven Commands...** > **install**을 클릭합니다.
 +
-image:./images/image26.png[]
+image:../images/image26.png[]
 +
 5. Explorer 패널에서 빌드 결과를 확인합니다. target 폴더에 cgi-shade.jar 파일이 생성된 것을 확인합니다.
 +
-image:./images/image27.png[]
+image:../images/image27.png[]
 +
 6. 터미널에서 java.cgi.bat(Windows에서) / java.cgi.sh(macOS 또는 Linux에서) 파일을 실행합니다.
 +
 **Windows**
++
 ----
 C:\Lab2-2\cgi>java.cgi.bat
 content-type:text/html
@@ -454,6 +457,7 @@ body:hello
 ----
 +
 **macOS / Linux**
++
 ----
 cgi % ./java.cgi.sh
 content-type:text/html
@@ -467,5 +471,5 @@ body:hello
 +
 7. 연습이 종료되었습니다.
 
-link:./16_fast_cgi.adoc[이전: Fast CGI] +
-link:./18_servlet.adoc[다음: Java Servlet]
+link:./18_lab2-3.adoc[이전: 간단한 Java CGI 프로그램 작성 - 1] +
+link:./20_fast_cgi.adoc[다음: Fast CGI]

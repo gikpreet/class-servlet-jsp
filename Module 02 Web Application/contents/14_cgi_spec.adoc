@@ -11,13 +11,18 @@
 *** REQUEST_METHOD
 *** CONTENT_TYPE
 *** CONTENT_LENGTH
+* Script ( 스크립트)
+** 서버에 의해 호출되는 소프트웨어
+** 런타임에 해석되는 일련의 명령문
 
 ---
 
 CGI는 HTTP 프로토콜 기반의 웹 서버와 다양한 언어로 구현된 프로그램 간의 데이터를 교환하는 표준 스펙이자 Interface 입니다.
 
-CGI Version 1.1
+CGI Version 1.1은 아래 문서에서 참조할 수 있습니다. +
 https://datatracker.ietf.org/doc/html/rfc3875
+
+
 
 link:./13_overview_cgi.adoc[이전: CGI 개요] +
 link:./15_cgi_pros_cons.adoc[다음: CGI 장/단점]
