@@ -6,9 +6,8 @@ Web Application은 Web Server의 기능을 확장하여 비즈니스 로직을 �
 
 == Table of Contents
 
-1. Web Application 구성요소
+1. Web Application 개요
 2. Web Server
 3. CGI(Common Gateway Interface)
-4. Servlet
 
 link:./02_overview_web_application.adoc[다음: Web Application 구성요소]
