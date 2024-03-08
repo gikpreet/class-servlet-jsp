@@ -1,4 +1,4 @@
-= Web Application 개요
+= Chapter 1. Web Application 개요
 
 Web Application은 2-Tier 아키텍처의 여러 문제점을 해결할 수 있는 아키텍처로 구성되며, 비즈니스 로직과 프리젠테이션이 완전히 분리된 구조로 이루어져 있어 프로그램의 변경 및 유지 보수가 쉬운 구조를 가지고 있습니다. 
 

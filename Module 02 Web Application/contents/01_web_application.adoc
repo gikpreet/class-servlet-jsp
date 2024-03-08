@@ -2,7 +2,7 @@
 
 Web Application은 Web Server의 기능을 확장하여 비즈니스 로직을 서버 측에 배포하고, 클라이언트로 웹 브라우저를 사용하는 클라이언트 서버 형태의 애플리케이션을 말합니다. Web Application에서 사용되는 브라우저는 씬 클라이언트(Thin Client)로 가볍고, 웹 브라우저를 설치할 수 있는 모든 플랫폼에서 사용할 수 있으며, 일반 사용자들이 쉽게 사용할 수 있다면 장점을 가지고 있습니다. 
 
-이번 단원에서는 Web Application에 대해 알아봅니다.
+이 모듈에서는 Web Application에 대해 알아봅니다.
 
 == Table of Contents
 
