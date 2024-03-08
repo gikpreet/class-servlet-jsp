@@ -1,0 +1,20 @@
+= Java Server Pages 개요
+
+* Java Server Pages 또는 Jakarta Server Pages
+* HTML 내에 Java 코드를 삽입하여 웹 서버에서 동적 페이지를 생성하여 웹 브라우저에 돌려주는 서버 사이드 스크립트 언어
+* Java Enterprise Edition중 일부
+* Web Application Server(WAS)에서 동작
+* Java Servlet으로 변환된 후 실행
+** Servlet과 거의 유사함
+** Servlet과는 달리 HTML 표준에 따라 작성되어 웹 디자인에 유리
+** PHP, ASP와 유사
+** JSTL등의 JSP 태그 라이브러리를 사용하여 생산성을 높일 수 있음
+
+---
+
+Jakarta Server Pages(이전 명칭: Java Server Pages)는 HTML 내에 Java 코드를 삽입하여 웹 서버에서 동적으로 웹 페이지를 생성하여 웹 브라우저에 돌려주는 서버 사이드 스크립트 언어입니다. Java EE 스펙의 일부로, Tomcat등의 Web Application Server (WAS)에서 동작합니다.
+
+JSP는 실행시에 Java Servlet으로 변환된 후 실행됩니다. Servlet과 거의 유사하다고 볼 수 있으나, HTML 표준에 의해 작성되므로 디자인 측면에서 유리한 점을 가지고 있습니다.
+
+link:./02_java_server_page.adoc[이전: Chapter 1. Java Server Pages] +
+link:./04_jsp_operation.adoc[다음: JSP 동작 방식]

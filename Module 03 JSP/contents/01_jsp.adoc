@@ -1,6 +1,6 @@
 = JSP
 
-JSP는 Java Server Pages의 약자이며, HTML 코드에 Java 코드를 넣어 동적 웹 페이지를 생성하는 웹 애플리케이션 도구입니다.
+JSP는 Java Server Pages 또는 Jakarta Server Pages의 약자이며, HTML 코드에 Java 코드를 넣어 동적 웹 페이지를 생성하는 웹 애플리케이션 저작을 위한 서버 사이드 스크립트 언어입니다.
 
 JSP가 실행되면 Java Servlet으로 변환되며, Web Application Server(WAS)에서 동작되면서 필요한 기능을 수행하고 생성된 데이터를 웹 페이지와 함께 클라이언트로 응답하는, Java 웹 애플레케이션 저작 도구입니다.
 
@@ -9,3 +9,6 @@ JSP가 실행되면 Java Servlet으로 변환되며, Web Application Server(WAS)
 == Table of contents
 
 1. Java Server Pages
+
+
+link:./02_java_server_page.adoc[다음: Chapter 1. Java Server Pages]
