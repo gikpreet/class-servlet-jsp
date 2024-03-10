@@ -4,10 +4,20 @@
 
 == 연습 1 환경 구성
 
-=== tomcat 설치
+=== Tomcat 설치
 
 ==== Windows 11에서 Tomcat 9 설치
 
 Windows 11에서 Tomcat 9 설치를 위해, 아래 웹 사이트의 설치 안내를 따르십시오.
 
 link:./https://github.com/gikpreet/class-environment_settings/blob/main/03_WAS/01_Tomcat/01_install_tomcat_on_windows11.adoc[Windows 11에서 Tomcat 설치]
+
+==== macOS에서 tomcat 9 설치
+
+macOS에서 Tomcat 9 설치를 위해, 아래 웹 사이트의 설치 안내를 따르십시오.
+
+link:./https://github.com/gikpreet/class-environment_settings/blob/main/03_WAS/01_Tomcat/02_install_tomcat_on_macOS.adoc[macOS에서 Tomcat 설치]
+
+==== Linux(Ubuntu)에서 tomcat 9 설치
+
+Linux(Ubuntu)에서 Tomcat 9 설치를 위해, 아래 웹 사이트의 설치 안내를 따르십시오.
