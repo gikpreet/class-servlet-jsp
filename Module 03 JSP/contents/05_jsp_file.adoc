@@ -1,3 +1,51 @@
 = JSP 파일 구조
 
 * JSP의 목적은 요청한 웹 브라우저에 응답할 HTML 파일을 생성하는 것
+* JSP 태그를 사용하여 HTML 요소와 Java 코드를 분리하여 작성
+* WAS는 페이지를 요청 받으면 JSP 태그 부분과 HTML 부분을 합하여 Java 소스 파일로 변환
+
+---
+
+JSP의 가장 큰 목적은 웹 브라우저로 반환할 HTML 파일을 생성하는 것입니다. JSP 파일은 HTML 요소들과 동적 컨텐츠를 구성하는 부분으로 이루어진 태그들로 구성되며, WAS가 페이지의 요청을 받으면 HTML 요소와 JSP 태그를 합쳐 Java 소스 파일로 변환하고 실행하여 결과를 돌려줍니다.
+
+JSP 페이지는 HTML 요소와 JSP 태그로 구성하며, JSP 태그는 아래와 같은 요소들로 구성됩니다.
+
+* **지시어(Directrive)** JSP 페이지의 속성을 지정
+* **주석(Comment)** JSP 페이지의 설명 삽입
+* **선언(Declaration)** 변수와 메소드를 선언
+* **표현식(Expression)** 계산식이나 함수를 호출한 결과를 문자열 형태로 출력
+* **스크립틀릿(Scriptlet)** Java 코드를 기술
+* **액션 태그** Java Bean이나 Applet Server Module과 연결
+
+[source, html]
+----
+<!-- 지시어 -->
+<%@ page language="java" contentType="text/html;" pageEncoding="UTF-8" %>
+<!-- 선언 -->
+<%!
+    String subject = "JSP";
+
+    public String getSubject() {
+        return this.subject;
+    }
+%>
+<!-- 주석 -->
+<%-- 페이지 시작 --%>
+<html>
+<head>
+    <title>
+<!-- 표현식 -->
+        <%= this.getSubject() %>
+    </title>
+</head>
+<body>
+<!-- 스크립틀릿 -->
+    <%
+        out.println("Hello, " + this.getSubject() + "!!!");
+    %>
+</body>
+</html>
+----
+
+link:./04_jsp_operation.adoc[이전: JSP 동작 방식] +
+link:./06_jsp_tags.adoc[다음: JSP 기본 태그]
