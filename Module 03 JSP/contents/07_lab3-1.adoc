@@ -18,7 +18,7 @@ link:https://github.com/gikpreet/class-environment_settings/blob/main/03_WAS/01_
 
 macOS에서 Tomcat 9 설치를 위해, 아래 웹 사이트의 설치 안내를 따르십시오.
 
-link:https://github.com/gikpreet/class-environment_settings/blob/main/03_WAS/01_Tomcat/02_install_tomcat_on_macOS.adoc[macOS에서 Tomcat 설치]
+link:https://github.com/gikpreet/class-environment_settings/blob/main/03_WAS/01_Tomcat/02_install_tomcat_on_macos.adoc[macOS에서 Tomcat 설치]
 
 ==== Linux(Ubuntu)에서 tomcat 9 설치
 
@@ -46,12 +46,38 @@ image:../images/image02.png[]
 +
 5. 웹 브라우저를 실행하여 http://localhost:8080 으로 이동하고, Manager App 버튼을 클릭합니다.
 6. 로그인 창에서, 사용자 이름과 비밀번호에 admin을 입력하고 로그인합니다.
-7. Tomcat 웹 애플리케이션에 /lab3-1 애플리케이션을 확인합니다.
+7. Tomcat 웹 애플리케이션에서 /lab3-1 애플리케이션을 확인합니다.
 +
 image:../images/image03.png[]
 +
 8. /lab3-1 애플리케이션을 클릭하여 엽니다. 아래와 같은 웹 애플리케이션이 실행됩니다.
 +
-image:../images/image04.png[]
+image:../images/image04.png[width=450]
 +
 9. c:\apache-tomcat-9.8.xx\webapps\lab3-1 폴더를 Visual Studio Code에서 엽니다.
+
+== macOS에서 실습 파일 준비
+
+1. 아래 링크에서 실습 파일을 다운로드 합니다.
++
+https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-1.zip
++
+2. 다운로드한 파일의 압축을 해제합니다.
+3. 압축을 해제한 폴더의 Lab3-1 폴더를 /opt/homebrew/Cellar/tomcat@9/9.0.85/libexec/webapps 디렉토리로 복사합니다.
+4. 웹 브라우저를 실행하여 http://localhost:8080 으로 이동하고, Manager App 버튼을 클릭합니다.
+5. 로그인 창에서, 사용자 이름과 비밀번호에 admin을 입력하고 로그인합니다.
+6. Tomcat 웹 애플리케이션에서 /lab3-1 애플리케이션을 확인합니다.
++
+image:../images/image03.png[]
++
+7. /lab3-1 애플리케이션을 클릭하여 엽니다. 아래와 같은 웹 애플리케이션이 실행됩니다.
++
+image:../images/image05.png[width=450]
+
+== Linux(Ubuntu)에서 실습 파일 준비
+
+1. 아래 링크에서 실습 파일을 다운로드 합니다.
++
+https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-1.zip
++
+2. 다운로드한 파일의 압축을 해제합니다.
