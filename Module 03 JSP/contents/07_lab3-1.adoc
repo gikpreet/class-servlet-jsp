@@ -402,3 +402,6 @@ image:../images/image07.png[width=650]
 12. 웹 브라우저를 실행하여 http://localhost:8080/lab3-1로 이동하여 페이지를 확인합니다.
 +
 image:../images/image08.png[width=650]
+
+link:./06_jsp_tags.adoc[이전: JSP 기본 태그] +
+link:./08_implicit_object.adoc[다음: JSP 내장 객체]

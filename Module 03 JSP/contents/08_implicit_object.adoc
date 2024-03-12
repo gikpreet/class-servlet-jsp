@@ -1,0 +1,49 @@
+= JSP 내장 객체
+
+* JSP에 기본으로 포함된 웹 프로그래밍을 위한 필수적인 객체
+* 컨테이너가 미리 선언해 둔 참조 변수를 이용해 사용
+* 별도의 객체 생성 없이 각 내장 객체의 메소드를 사용할 수 있음
+* JSP 문서의 스크립틀릿(<% ... %>)과 표현식(<%= %>)에서만 사용할 수 있음
+
+---
+
+웹 응용 프로그램은 클라이언트가 서버로 요청을 보내면 서버는 요청에 대한 응답을 생성하여 돌려주는 형태로 동작합니다. JSP 내장 객체(Implicit Object)는 요청과 응답, HTTP 헤더등을 쉽게 다롤 수 있도록 하는 JSP에 포함된 객체입니다.
+
+내장 객체는 컨테이너가 자동으로 생성하므로, 별도로 객체를 생성하거나 하는 등의 작업이 필요하지 않습니다. 컨테이너가 JSP 페이지를 요청받으면 WAS는 해당 페이지를 Java Servlet 소스코드로 변환하는데, 변환된 코드에는 아래와 같은 _jspService 메소드가 포함됩니다. 이 메소드에서 내장 객체를 참조하는 변수를 생성합니다.
+
+[source, java]
+----
+public void _jspService(final javax.servlet.http.HttpServletRequest request, final javax.servlet.http.HttpServletResponse response)
+    ...
+
+    final javax.servlet.jsp.PageContext pageContext;
+    javax.servlet.http.HttpSession session = null;
+    final javax.servlet.ServletContext application;
+    final javax.servlet.ServletConfig config;
+    javax.servlet.jsp.JspWriter out = null;
+    final java.lang.Object page = this;
+    javax.servlet.jsp.JspWriter _jspx_out = null;
+    javax.servlet.jsp.PageContext _jspx_page_context = null;
+
+    ...
+}
+----
+
+JSP 내장 객체의 종류는 아래와 같습니다.
+
+[%header, cols="1,2,4"]
+|===
+|내장 객체|타입|설명
+|request|javax.servlet.http.**HttpServletRequest**|클라이언트가 요청한 정보 저장
+|response|javax.servlet.http.**HttpServletResponse**|요청에 대한 응답정보 저장
+|out|javax.servlet.jsp.**JspWriter**|JSP 페이지에 대한 출력 스트림
+|sesson|javax.servlet.http.**HttpSession**|웹 브라우저에서 정보를 유지하기 위한 세션 정보
+|application|javax.servlet.**ServletContext**|웹 애플리케이션 관련 컨텍스트 정보 저장
+|pageContext|javax.servlet.jsp.**PageContext**|JSP 페이지에 대한 정보 저장
+|page|java.lang.**Object**|JSP 페이지를 구현한 Java 클래스 인스턴스
+|config|javax.servlet.**ServletConfig**|JSP 페이지에 대한 설정 정보
+|exception|java.lang.**Exception**|예외
+|===
+
+link:./lab3-1.adoc[이전: Lab 3-1 간단한 JSP 응용 프로그램 생성] +
+link:./09_request.adoc[다음: requst 객체]
