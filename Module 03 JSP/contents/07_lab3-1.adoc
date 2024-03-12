@@ -73,6 +73,8 @@ image:../images/image03.png[]
 7. /lab3-1 애플리케이션을 클릭하여 엽니다. 아래와 같은 웹 애플리케이션이 실행됩니다.
 +
 image:../images/image05.png[width=450]
++
+8. /opt/homebrew/Cellar/tomcat@9/9.0.85/libexec/webapps/lab3-1 폴더를 Visual Studio Code에서 엽니다.
 
 == Linux(Ubuntu)에서 실습 파일 준비
 
@@ -81,3 +83,322 @@ image:../images/image05.png[width=450]
 https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-1.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
+3. 압축을 해제한 폴더의 Lab3-1 폴더를 /var/lib/tomcat9/webapps 디렉토리로 복사합니다.
++
+----
+$ cp -r ~/Downloads/lab3-1/ /var/lib/tomcat9/webapps/
+----
+4. 웹 브라우저를 실행하여 http://localhost:8080 으로 이동하고, Manager App 버튼을 클릭합니다.
+5. 로그인 창에서, 사용자 이름과 비밀번호에 admin을 입력하고 로그인합니다.
+6. Tomcat 웹 애플리케이션에서 /lab3-1 애플리케이션을 확인합니다.
++
+image:../images/image03.png[]
++
+7. /lab3-1 애플리케이션을 클릭하여 엽니다. 아래와 같은 웹 애플리케이션이 실행됩니다.
++
+image:../images/image06.png[width=450]
++
+8. /var/lib/tomcat9/webapps/lab3-1 폴더를 Visual Studio Code에서 엽니다.
+
+== 연습 3 실습 파일 준비
+
+1. Visual Studio Code에서, /book 디렉토리의 BookInList.java 파일을 열고 코드를 확인합니다.
++
+[source, java]
+----
+package book;
+
+public class BookInList {
+    protected long isbn;
+    protected String title;
+    protected String subTitle;
+    protected String author;
+    protected String image;
+    protected int unitPrice;
+
+    public static class BookInListBuilder {
+        private long isbn;
+        private String title;
+        private String subTitle;
+        private String author;
+        private String image;
+        private int unitPrice;
+    
+        public BookInListBuilder(long isbn, String title) {
+            this.isbn = isbn;
+            this.title = title;
+        }
+    
+        public BookInListBuilder subTitle(String subTitle) {
+            this.subTitle = subTitle;
+            return this;
+        }
+    
+        public BookInListBuilder author(String author) {
+            this.author = author;
+            return this;
+        }
+    
+        public BookInListBuilder image(String image) {
+            this.image = image;
+            return this;
+        }
+    
+        public BookInListBuilder unitPrice(int unitPrice) {
+            this.unitPrice = unitPrice;
+            return this;
+        }
+    
+        public BookInList build() {
+            BookInList bookInList = new BookInList();
+            bookInList.isbn = this.isbn;
+            bookInList.title = this.title;
+            bookInList.subTitle = this.subTitle;
+            bookInList.author = this.author;
+            bookInList.image = this.image;
+            bookInList.unitPrice = this.unitPrice;
+            return bookInList;
+        }
+    }
+
+    public long getIsbn() {
+        return this.isbn;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getSubTitle() {
+        return this.subTitle;
+    }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public String getImage() {
+        return this.image;
+    }
+
+    public int getUnitPrice() {
+        return this.unitPrice;
+    }
+}
+----
++
+2. BookFactory.java 파일을 열고 코드를 확인합니다.
++
+[source, java]
+----
+package book;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class BookFactory {
+    public static List<BookInList> getBest5Books() {
+        List<BookInList> list = new ArrayList<>();
+        list.add(createBookInList(1, "이노베이터", "창의적인 삶으로 나아간 천재들의 비밀", "월터 아이작슨", "innovator.jpg", 42000));
+        list.add(createBookInList(2, "모비 딕", "", "허먼 멜빌", "mobydick.jpg", 50000));
+        list.add(createBookInList(3, "코스모스", "특별판", "칼 세이건", "cosmos.jpg", 50000));
+        list.add(createBookInList(4, "총, 균, 쇠", "인간사회의 운명을 바꾼 힘", "제럴드 다이어몬드", "ggs.jpg", 26820));
+        list.add(createBookInList(5, "세계대전 Z", "", "맥 스브록스", "worldwarz.jpg", 13800));
+
+        return list;
+    }
+
+    public static BookInList createBookInList(long isbn, String title, String subTitle, String author, String image, int unitPrice) {
+        return new BookInList.BookInListBuilder(isbn, title).subTitle(subTitle).author(author).image(image).unitPrice(unitPrice).build();
+    }
+}
+
+----
++
+3. 터미널을 열고, books 디렉토리로 이동합니다.
++
+----
+$ cd book
+----
++
+4. 아래 명령을 실행하여 소스 파일을 컴파일합니다.
++
+----
+$ javac *.java
+----
++
+5. 아래 명령을 실행하여 컴파일된 바이트코드 파일을 WEB-INF/classes/book 디렉토리로 이동합니다.
++
+----
+$ sudo mv ./*.class ../WEB-INF/classes/book
+----
+
+== 연습 4 책 목록을 보여주는 JSP 페이지 작성
+
+1. index.jsp 파일을 엽니다.
+2. Todo 1 구역에, page 지시어를 작성합니다.
++
+[source, html]
+----
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8" %>
+----
++
+3. header.jsp 파일을 열고 코드를 확인합니다.
++
+[source, html] 
+----
+<html>
+<header>
+    <title>Book Store</title>
+</header>
+<table width="1000">
+    <tr>
+        <td width="800">
+            <img src="images/bookstorelogo.png" width="150" />
+        </td>
+        <td valign="bottom">
+            <%= session.getId() %>
+        </td>
+    </tr>
+</table>
+<hr />
+----
++
+4. tail.jsp 파일을 열고 코드를 확인합니다.
++
+[source, html]
+----
+<hr>
+<table>
+    <tr>
+        <td width="150">
+            <img src="images/logo.png" border="0" width="150" />
+        <td>
+        <td valign="top">
+            <div style="font-size:9pt">Datamotion(R) Data Analytics Service all right reserved<br />
+            2006 ~ 2013</div>
+        </td>
+    </tr>
+<table>
+<html>
+----
++
+5. index.jsp 파일을 열고 첫 번째 Todo 2 구역에 include 지시어를 사용하여 header.jsp 파일을 삽입합니다.
++
+[source, html]
+----
+<%@ include file="./header.jsp" %>
+----
++
+6. index.jsp 파일의 두 번째 Todo 구역에 include 지시어를 사용하여 tail.jsp 파일을 삽입합니다.
++
+[source, html]
+----
+<%@ include file="./tail.jsp" %>
+----
++
+7. 전체 index.jsp 페이지는 아래와 유사할 것입니다.
++
+[source, html]
+----
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8" %>
+
+<%@ include file="./header.jsp" %>
+
+<body>
+<table width="1000">
+    <tr>
+        <td>
+            <!-- Toto 3: insert codes for show top 5 book list -->
+            <h1>Book Store</h1>
+        </td>
+    </tr>
+</table>
+</body>
+
+<%@ include file="./tail.jsp" %>
+----
++
+8. 웹 브라우저를 실행하여 http://localhost:8080/lab3-1로 이동하여 페이지를 확인합니다.
++
+image:../images/image07.png[width=650]
++
+9. Visual Studio Code에서, index.jsp 페이지의 Todo 3 구역에 아래와 같은 import를 삽입합니다.
++
+[source, html]
+----
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="book.BookInList" %>
+<%@ page import="book.BookFactory" %>
+----
++
+10. Todo 4 구역에서, BookFactory 클래스의 getBest5Books 메소드를 호출하여 반환받은 ArrayList를 사용하여 책의 목록을 화면에 보여주는 코드를 작성합니다.
++
+[source, html]
+----
+<table width=600>
+    <%
+    List<BookInList> list = BookFactory.getBest5Books();
+
+    for(BookInList book: list) {
+    %>
+        <tr>
+            <td width="52"><img src="images/<%= book.getImage() %>" width="50" /></td>
+                <td>
+                    <span style="font-weight:bold"><%= book.getTitle() %></span> <span style="font-size:8pt;color:gray;"><%= book.getSubTitle() %></span><br />
+                    <span style="font-size:10pt"><%= book.getAuthor() %></span><br />
+                    <span style="font-size:10pt;color:teal;"><%= book.getUnitPrice() %></span>
+                </td>
+        </tr>
+    <%
+    }
+    %>
+</table>
+----
++
+11. 전체 index.jsp 페이지는 아래와 유사할 것입니다.
++
+[source, html]
+----
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="book.BookInList" %>
+<%@ page import="book.BookFactory" %>
+
+<%@ include file="./header.jsp" %>
+
+<body>
+<table width="1000">
+    <tr>
+        <td>
+            <table width=600>
+                <%
+                List<BookInList> list = BookFactory.getBest5Books();
+
+                for(BookInList book: list) {
+                %>
+                    <tr>
+                        <td width="52"><img src="images/<%= book.getImage() %>" width="50" /></td>
+                        <td>
+                            <span style="font-weight:bold"><%= book.getTitle() %></span> <span style="font-size:8pt;color:gray;"><%= book.getSubTitle() %></span><br />
+                            <span style="font-size:10pt"><%= book.getAuthor() %></span><br />
+                            <span style="font-size:10pt;color:teal;"><%= book.getUnitPrice() %></span>
+                        </td>
+                    </tr>
+                <%
+                }
+                %>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+
+<%@ include file="./tail.jsp" %>
+----
++
+12. 웹 브라우저를 실행하여 http://localhost:8080/lab3-1로 이동하여 페이지를 확인합니다.
++
+image:../images/image08.png[width=650]
