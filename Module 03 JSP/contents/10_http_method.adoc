@@ -2,7 +2,8 @@
 
 * 클라이언트와 서버 사이에 이루어지는 요청과 응답 데이터를 전송하는 방식
 * 서버가 수행해야 할 동작을 지정하는 방식
-
+* Request Method
++
 [%header, cols="1, 3"]
 |===
 |메소드|설명
@@ -19,7 +20,106 @@
 
 ---
 
+== HTTP Request 메시지
 
-https://inpa.tistory.com/entry/WEB-%F0%9F%8C%90-HTTP-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%A2%85%EB%A5%98-%ED%86%B5%EC%8B%A0-%EA%B3%BC%EC%A0%95-%F0%9F%92%AF-%EC%B4%9D%EC%A0%95%EB%A6%AC
+HTTP Request Message는 클라이언트와 서버가 서로 정보를 요청하는데 사용하는 메시지이며, 아래와 같이 4부분으로 나뉩니다.
 
-https://han-joon-hyeok.github.io/posts/Comparison-of-GET-POST/
+* Request Line (요청 라인)
+** 데이터 처리 방식(HTTP Method)와 기본 페이지, 프로토콜 버전등이 표시됨
+* Request Header (요청 헤더)
+** **User-Agent** 사용자의 클라이언트 애플리케이션(웹 브라우저 등) 종류 및 버전 정보가 포함
+** **Accept** 웹 서버로 부터 수신되는 데이터 중 웹 브라우저가 처리할 수 있는 데이터 타입, MINE 타입을 의미
+** **Cookie** Stateless인 HTTP의 특성상, 사용자 정보를 유지하려고 만든 값인 쿠키를 표시
+** **Referer** 현재 페이지 접속 전에 어떤 사이트를 경유했는지 알ㄹ려주는 도메인 또는 URL 정보
+** **Host** 사용자가 요청한 도메인 정보
+* A blank line seperates header & body(공백 라인)
+** 헤더와 분문을 구분하기 위한 캐리지 리턴(\r)과 라인 피드(\n)로 구성
+* Request body(본문)
+** 요청과 관련된 정보이며, HTTP 요청의 내용이 포함됨. Payload는 Body라고 부름
+
+== GET 메소드
+
+GET 메소드는 HTTP 프로토콜을 통해 연결된 목적지에서 리소스를 조회하는 방법을 정의합니다. 서버에 전달하고 싶은 데이터는 URL의 끝에 `?` 와 이름, 값으로 쌍을 이루는 형식으로 만들어진 **쿼리스트링(Query String)**을 통해 전달합니다. 요청 파라미터가 여러 개일 경우 `&` 로 구분합니다.
+
+----
+GET /books/search.jsp?title=cosmos&author=carl
+----
+
+GET 메소드의 특징은 아래와 같습니다.
+
+* URL에 변수(데이터)를 포함시켜 요청
+* 데이터를 Header에 포함하여 전송
+* URL에 데이터가 노출되어 보안에 취약함
+* 캐싱 가능
+
+
+쿼리스트링 이외에 메시지 바디를 사용하여 데이터를 전달할 수 있으나, 서버에서 이를 위한 구성을 지원해야 하므로 권장하지 않습니다. POST 역시 리소스 조회에 사용할 수 있으나, GET 메소드는 캐싱이 가능하여 GET을 사용하는 것이 유리합니다.
+
+curl을 사용해 아래와 같은 GET 메시지를 http://localhost:8080/lab3-1/index.jsp
+
+----
+curl -X GET -v http://localhost:8080/lab3-1/index.jsp
+----
+
+아래와 같은 HTTP 요청이 해당 서버로 전달됩니다.
+
+----
+GET /lab3-1/index.jsp HTTP/1.1
+Host: localhost:8080
+User-Agent: curl/8.4.0
+Accept: */*
+----
+
+서버는 요청을 처리한 후 아래와 같은 헤더를 클라이언트에 응답하고,
+
+----
+HTTP/1.1 200
+Set-Cookie: JSESSIONID=2DB280134B109F30786D2129D9428265; Path=/lab3-1; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Content-Length: 3874
+Date: Wed, 13 Mar 2024 00:25:12 GMT
+----
+
+Content-Type에 지정된 포맷으로 결과를 반환합니다. 결과는 HTML, JSON등 정해진 여러 형식일 수 있습니다.
+
+== POST 메소드
+
+POST 메소드는 전달할 데이터를 처리하거나 생성하는 요청하는 방법을 정의합니다. POST 메소드는 클라이언트가 임의의 데이터를 포함한 실체를 서버로 보내는 것을 가능하게 합니다. 서버는 입력에 따라 어떤 행동을 한 다음 응답을 보냅니다. 거의 모든 온라인 프로그램은 이 메소드를 사용합니다. 요청내의 URL은 정보를 받을 프로그램의 이름을 입력합니다. 
+
+POST 메소드의 특징은 다음과 같습니다.
+
+* URL에 변수(데이터)를 노출하지 않고 요청
+* 데이터를 body에 포함시킴
+* 캐싱 불가능
+
+== PUT 메소드
+
+PUT 메소드는 클라이언트가 요청에 지정한 URL에 요청의 본문에 있는 실체를 저장하도록 서버에 요청합니다. PUT 메소드에서 URI는 요청의 실체를 나타냅니다. PUT 메소드는 GET 메소드와 정확히 반대로 서버로 리소스를 복사할 수 있도록 합니다. POST 메소드와 유사하지만 POST 메소드는 요청에 포함된 실체를 처리하는 프로그램을 나타냅니다. 따라서 POST는 대화형 동작이 수행되는 프로그램에 사용됩니다. 웹 서버에 리소스를 저장하는 것은 일반적이지 않은 경우이므로 GET이나 POST 만큼 많이 쓰이지는 않지만, 컨텐츠를 웹 사이트에 전송하는 작업 등과 같이 쓰임새가 명확한 경우에 사용합니다.
+
+=== HEAD 메소드
+
+HEAD 메소드는 GET 메소드와 동일하지만, 실제적인 메시지 본문을 보내지 말라고 서버에게 요청합니다. 따라서, HEAD 메소드에 대한 응답은 GET 메소드로 보넀을 때 받은 메시지의 헤더 부분입니다. 클라이언트는 서버에게 파일 전체를 전송해 달라고 요청하기 전에 파일의 존재, 상태, 크기를 점검하기 위해 HEAD 메소드를 사용하는 경우가 있습니다.
+
+=== OPTIONS 메소드
+
+OPTIONS 메소드는 클라이언트가 이용 가능한 통신 옵션에 대한 정보를 서버가 보내도록 요청합니다. 특정 리소스의 URI를 요청할 수도 있고, 서버 자체에 대한 접근 정보를 요청하기 위해 와일드카드를 사용할 수도 있습니다. 응답은 클라이언트에게 서버에 어떻게 접속할지에 대한 세부 내용이 담긴 헤더입니다.
+
+----
+< HTTP/1.1 200
+< Allow: GET, HEAD, POST, OPTIONS
+< Content-Length: 0
+< Date: Thu, 14 Mar 2024 10:22:33 GMT
+<
+* Connection #0 to host localhost left intact
+----
+
+=== DELETE 메소드
+
+DELETE 메소드는 특정 자원을 지우도록 요청합니다.
+
+=== TRACE 메소드
+
+TRACE 메소드는 클라이언트가 서버에 보낸 요청의 복사본을 돌려받도록 합니다. 테스트 용도로 쓰입니다.
+
+link:./09_request.adoc[이전: Request 객체] +
+link:./11_response.adoc[다음: Response 객체]
