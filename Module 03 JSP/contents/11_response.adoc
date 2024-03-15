@@ -1,1 +1,26 @@
 = Response 객체
+
+* 서버가 응답한 응답 정보
+* 요청에 대해 서버가 응답한 내용을 읽을 때 사용
+* 응답 형식 지정, 헤더 정보와 쿠키 액세스, URL 재작성, 리다이렉트를 위한 여러 메소드 제공
+
+---
+
+HttpServletResponse 클래스 인스턴스인 response 객체는 JSP 페이지의 실행 결과를 웹 브라우저로 반환할 때 사용합니다. 클라이언트에서 요청한 request에 대한 응답으로 response 객체가 반환됩니다.
+
+== 객체 응답 형식 지정
+
+response 객체는 응답의 컨텐트 타입, 문자열 등 객체의 응답 형식을 지정하거나 읽을 수 있는 메소드를 제공합니다.
+
+[%header, cols="2,1,4"]
+|===
+|메소드|return type|설명
+|setContentType(String type)|void|MIME 타입을 지정하며, 인코딩도 지정할 수 있음
+|getCharacterEncoding()|String|응답으로 전달받는 컨텐츠의 인코딩 정보를 반환
+|===
+
+
+
+https://wickedmagic.tistory.com/122
+
+https://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServletResponse.html
