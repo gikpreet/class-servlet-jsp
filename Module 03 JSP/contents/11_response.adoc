@@ -6,7 +6,7 @@
 
 ---
 
-HttpServletResponse 클래스 인스턴스인 response 객체는 JSP 페이지의 실행 결과를 웹 브라우저로 반환할 때 사용합니다. 클라이언트에서 요청한 request에 대한 응답으로 response 객체가 반환됩니다.
+javax.servlet.HttpServletResponse 클래스 인스턴스인 response 객체는 JSP 페이지의 실행 결과를 웹 브라우저로 반환할 때 사용합니다. 클라이언트에서 요청한 request에 대한 응답으로 response 객체가 반환됩니다.
 
 == 객체 응답 형식 지정
 
@@ -19,8 +19,29 @@ response 객체는 응답의 컨텐트 타입, 문자열 등 객체의 응답 �
 |getCharacterEncoding()|String|응답으로 전달받는 컨텐츠의 인코딩 정보를 반환
 |===
 
+== 응답 헤더
 
+헤더 정보나 쿠키 등에 대한 정보를 지정하는 메소드를 제공합니다.
 
-https://wickedmagic.tistory.com/122
+[%header, cols="2,1,4"]
+|===
+|메소드|return type|설명
+|addCookie(Cookie cookie)|void|응답에 지정한 쿠키를 저장
+|containsHeader(String name)|boolean|이름이 name인 헤더 포함 여부 검사
+|setHeader(String name String value)|이름이 name인 헤더의 값을 value로 지정
+|setDateHeader(String name, long date)|이름이 name인 헤더의 값을 long 타입 date로 지정
+|addHeader(String name, String value)|이름이 name이고, 값이 value인 응답 헤더를 추가
+|addIntHeader(String name, int value)|이름이 name이고, 값이 value인 응답 헤더를 추가
+|===
 
-https://docs.oracle.com/javaee/6/api/javax/servlet/http/HttpServletResponse.html
+== URL 재작성 관련 메소드
+
+|===
+|메소드|return type|설명
+|encodeRedirectURL(String url)|String|세션 정보를 포함하기 위해 sentRedirect() 메소드에서 사용할 URL을 인코딩
+|encodeURL(String name)|String|세션 정보를 포함하고 있느 링크에서 사용할 URL을 인코딩
+|sendRedirect(String location)|void|웹 서버가 웹 브라우저에게 지정한 URL로 자동 이동
+|===
+
+link:./10_http_method.adoc[이전: HTTP 메소드] +
+link:./12_out.adoc[다음: out 객체]

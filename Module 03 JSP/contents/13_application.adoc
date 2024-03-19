@@ -1,0 +1,14 @@
+= application 객체
+
+* 전체 웹 애플리케이션에서 싱글턴
+* 전체 웹 애플리케이션에서 공유되는 정보를 저장하는데 사용
+* 서버 정보, 서버의 물리적 정보등을 얻어오는데 사용
+
+---
+
+javax.servlet.ServletContext 인터페이스 타입 객체인 application 객체는 웹 애플리케이션에서 싱글턴이며, 모든 JSP 페이지에서 접근할 수 있습니다.
+
+모든 필드와 메소드 목록은 https://docs.oracle.com/javaee%2F6%2Fapi%2F%2F/javax/servlet/ServletContext.html 을 참조합니다.
+
+link:./12_out.adoc[이전: out 객체] +
+link:./14_pageContext.adoc[다음: pageCotnext 객체]

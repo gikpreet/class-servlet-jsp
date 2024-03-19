@@ -1,0 +1,8 @@
+= session 객체
+
+---
+
+HttpSession 인터페이스 객체 인스턴스인 session 객체
+
+link:./14_pageContext.adoc[이전: pageContext 객체] +
+link:./16_page.adoc[다음: page 객체]

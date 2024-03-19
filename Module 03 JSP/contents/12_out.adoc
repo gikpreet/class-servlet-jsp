@@ -1,0 +1,27 @@
+= out 객체
+
+* 웹 브라우저에 변수 등의 값을 출력할 떄 사용
+* Expression(<%= %>)과 동일하게 동작
+* 스크립틀릿 내에서 변수를 브라우저에 직접 출력해야 하는 경우에 사용
+
+---
+
+javax.servlet.jsp.JspWriter 클래스 인스턴스인 out 내장객체는 웹 브라우저에 변수 등의 값을 주로 출력할 때 사용합니다. <% = %>을 사용하는 Expression과 거의 동일하게 동작하여 페이지에서 out 객체를 직접 사용할 일은 많지 않으나, 스크립틀릿에서 변수를 브라우저에 직접 출력해야 하는 경우에 사용합니다.
+
+out 내장객체에서 출력되는 모든 정보는 버퍼에 먼저 저장된 후 출력됩니다.
+
+|===
+|메소드|return type|설명
+|clear()|void|버퍼를 비움
+|clearBuffer()|void|버퍼에서 현재 콘텐츠를 삭제함
+|close()|void|버퍼의 내용을 출력한 후, 스트림을 닫음
+|fluse()|void|스트램을 비움
+|getBufferSize()|int|JspWriter가 사용하는 버퍼의 크기르 반환
+|getRemaining()|int|버퍼에서 사용되지 않은 크기를 바이트로 반환
+|newLine()|void|줄 구분자를 출력
+|print([원시 데이터 타입, String, Object])|void|파라미터로 전달받은 값을 출력
+|println([원시 데이터 타입, String, Object]))|void|파라미터로 전달받은 값을 출력
+|===
+
+link:./11_response.adoc[이전: response 객체] +
+link:./13_application.adoc[다음: application 객체]

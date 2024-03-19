@@ -1,0 +1,8 @@
+= pageContext 객체       
+
+---
+
+javax.servlet.ServletContext 인터페이스 타입 객체인 pageContext 객체
+
+link:./13_application.adoc[이전: application 객체] +
+link:./15_session.adoc[다음: session 객체]
