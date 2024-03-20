@@ -224,10 +224,18 @@ $ cd book
 4. 아래 명령을 실행하여 소스 파일을 컴파일합니다.
 +
 ----
-$ javac *.java
+$ javac -encoding UTF-8 *.java
 ----
 +
 5. 아래 명령을 실행하여 컴파일된 바이트코드 파일을 WEB-INF/classes/book 디렉토리로 이동합니다.
++
+**Windows**
++
+----
+$ move *.class ..\WEB-INF\classes/book
+----
++
+**macOS or Linux**
 +
 ----
 $ sudo mv ./*.class ../WEB-INF/classes/book

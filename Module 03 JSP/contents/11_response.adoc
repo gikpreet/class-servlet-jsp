@@ -44,4 +44,4 @@ response 객체는 응답의 컨텐트 타입, 문자열 등 객체의 응답 �
 |===
 
 link:./10_http_method.adoc[이전: HTTP 메소드] +
-link:./12_out.adoc[다음: out 객체]
+link:./12_lab3-2.adoc[다음: 연습 3-1 응용 프로그램에 검색 추가]
