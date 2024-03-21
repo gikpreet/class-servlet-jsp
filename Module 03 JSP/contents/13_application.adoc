@@ -3,12 +3,65 @@
 * 전체 웹 애플리케이션에서 싱글턴
 * 전체 웹 애플리케이션에서 공유되는 정보를 저장하는데 사용
 * 서버 정보, 서버의 물리적 정보등을 얻어오는데 사용
-
+* 주요 메소드
++
+[%header, cols="2,1,4"]
+|===
+|메소드|return type|설명
+|setAttribute(String name, Object o)|void|application 객체에 추가 객체를 저장
+|getAttribute(String name)|Object|application 객체에 추가된 객체를 가져옴
+|removeAttribute(String name)|void|application 객체의 특정 attribute를 삭제함
+|getServerInfo()|String|컨테이너의 이름과 버전을 return
+|log(String msg)|void|메시지를 서블릿 컨테이너 로그파일에 기록
+|===
 ---
 
-javax.servlet.ServletContext 인터페이스 타입 객체인 application 객체는 웹 애플리케이션에서 싱글턴이며, 모든 JSP 페이지에서 접근할 수 있습니다.
+javax.servlet.ServletContext 인터페이스 타입 객체인 application 객체는 해당 웹 애플리케이션에서 싱글턴이며, 모든 JSP 페이지에서 접근할 수 있습니다. 주로 웹 애플리케이션 전반에서 사용되는 정보를 저장하거나, 서버의 정보, 서버의 물리적 경로등을 얻어오는데 사용합니다.
 
-모든 필드와 메소드 목록은 https://docs.oracle.com/javaee%2F6%2Fapi%2F%2F/javax/servlet/ServletContext.html 을 참조합니다.
+아래 JSP 페이지는 간략한 서버 정보를 표시합니다.
 
-link:./12_out.adoc[이전: out 객체] +
-link:./14_pageContext.adoc[다음: pageCotnext 객체]
+[source, html]
+----
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.Enumeration" %>
+<html>
+<body>
+    <%= application.getServerInfo() %> <br />
+    <%= application.getRealPath("applicationinfo.jsp") %> <br />
+    <%= application.getContextPath() %> <br />
+</body>
+</html>
+----
+
+----
+$ curl -X GET http://localhost:8080/test/applicationinfo.jsp
+
+<html>
+<body>
+    Apache Tomcat/9.0.85 <br />
+    C:\apache-tomcat-9.0.85\webapps\test\applicationinfo.jsp <br />
+    /test <br />
+</body>
+</html>
+----
+
+특정 페이지에서 아래와 같은 코드로 전체 웹 애플리케이션 차원에서의 속성(attribute)를 추가했다면,
+
+[source, java]
+----
+<$
+application.setAttribute("username", "Celine");
+%>
+----
+
+application 객체에서의 속성이 선언된 페이지가 실행된 다음부터 웹 애플리케이션 내의 모든 JSP 페이지에서 username을 사용하여 속성에 선언된 값에 액세스 할 수 있습니다.
+
+[source, java]
+----
+<%= application.getAttribute("username") %>
+----
+
+application 객체의 모든 필드와 메소드 목록은 https://docs.oracle.com/javaee%2F6%2Fapi%2F%2F/javax/servlet/ServletContext.html 을 참조합니다.
+
+link:./12_lab3-2.adoc[이전: Lab 3-2 응용 프로그램에 검색 추가] +
+link:./14_out.adoc[다음: out 객체]

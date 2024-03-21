@@ -1,0 +1,10 @@
+= page 객체
+
+* page 객체
+
+---
+
+page 객체
+
+link:./16_session.adoc[이전: session 객체] +
+link:./18_exception.adoc[다음: exception 객체]
