@@ -7,4 +7,22 @@
 
 ---
 
-javax.servlet.http.HttpSession 타입 객체인 session 객체
+javax.servlet.http.HttpSession 타입 객체인 session 객체는 JSP에서 클라이언트와 서버 사이의 세션을 표시합니다. 
+
+[%header, cols="2,1,4"]
+|===
+|메소드|return type|설명
+|getId()|String|웹 컨테이너에 의해 자동생성되는 해당 세션의 ID를 반환합니다.
+|getCreationTime()|long|1970년 1월 1일 0시 00분 00초(epoch time)에서 해당 세션이 생성된 순간까지의 경과 시간을 밀리초로 계산하여 반환합니다
+|getLastAccessTime()|long|epoch 타임으로부터 해당 세션이 생성된 순간까지의 경과 시간을 밀리초로 계산하여 long형으로 반환합니다.
+|getMaxInactiveTime()|int|클라이언트의 효청이 없을 시 서버가 해당 세션을 유지하도록 지정된 시간을 초 단위로 반환합니다.
+|Invalidate()|void|해당 세션을 종료합니다. 종료시 생성된 모든 객체는 소멸됩니다.
+|isNew()|boolean|새로운 세션일 경우 true, 아닐 경우 false를 반환합니다.
+|setMaxInactiveInterval(int seconds)|void|클라이언트의 요청이 없더라도 세션을 유지할 초 단위의 시간을 설정합니다. 음수로 설정하면 세션이 만료되지 않습니다.
+|setAttribute(String name, Object value)|void|지정한 이름으로 객체를 세션에 저장합니다.
+|===
+
+session 객체의 전체 메소드는 https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpSession.html 를 참조합니다.
+
+link:./16_session.adoc[이전: Session] +
+link:./18_page.adoc[다음: page 객체]
