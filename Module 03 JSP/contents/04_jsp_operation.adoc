@@ -184,4 +184,4 @@ public final class hello_jsp extends org.apache.jasper.runtime.HttpJspBase
 이렇게 WAS에서 변환한 Java Servlet 코드를 컴파일하고, WAS에서 JVM을 호출하여 실행되는 코드를 페이지를 요청한 쪽에 전달합니다.
 
 link:./03_introduction_jsp.adoc[이전: Java Server Pages 개요] +
-link:./05_jsp_tags.adoc[다음: JSP 기본 태그]
+link:./05_jsp_file.adoc[다음: JSP 파일 구조]
