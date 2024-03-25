@@ -39,10 +39,20 @@ Linux(Ubuntu)에서 Tomcat 9 설치를 위해, 아래 웹 사이트의 설치 �
 https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-1.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
-3. 압축을 해제한 폴더의 Lab3-1 폴더를 c:\apache-tomcat-9.8.xx\webapps 폴더로 복사합니다.
+3. 압축을 해제한 폴더의 Lab3-1\Starter 폴더를 아래 폴더로 복사합니다.
++
+a. Windows +
+c:\apache-tomcat-9.8.xx\webapps\lab3-1
+b. macOS 또는 Linux +
+tomcat의 webapps/lab3-1 디렉토리
 4. 폴더 구조는 아래와 같아야 합니다.
+a. windows
 +
 image:../images/image02.png[]
++
+b. macOS
++
+
 +
 5. 웹 브라우저를 실행하여 http://localhost:8080 으로 이동하고, Manager App 버튼을 클릭합니다.
 6. 로그인 창에서, 사용자 이름과 비밀번호에 admin을 입력하고 로그인합니다.
@@ -193,29 +203,47 @@ public class BookInList {
 ----
 package book;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Hashtable;
 
-public class BookFactory {
-    public static List<BookInList> getBest5Books() {
-        List<BookInList> list = new ArrayList<>();
-        list.add(createBookInList(1, "이노베이터", "창의적인 삶으로 나아간 천재들의 비밀", "월터 아이작슨", "innovator.jpg", 42000));
-        list.add(createBookInList(2, "모비 딕", "", "허먼 멜빌", "mobydick.jpg", 50000));
-        list.add(createBookInList(3, "코스모스", "특별판", "칼 세이건", "cosmos.jpg", 50000));
-        list.add(createBookInList(4, "총, 균, 쇠", "인간사회의 운명을 바꾼 힘", "제럴드 다이어몬드", "ggs.jpg", 26820));
-        list.add(createBookInList(5, "세계대전 Z", "", "맥 스브록스", "worldwarz.jpg", 13800));
+public class BookRepository {
+    private Hashtable<Integer, String[]> bookData;
+    private static BookRepository repository;
 
-        return list;
+    private BookRepository() {
+        readData();
     }
 
-    public static BookInList createBookInList(long isbn, String title, String subTitle, String author, String image, int unitPrice) {
-        return new BookInList.BookInListBuilder(isbn, title).subTitle(subTitle).author(author).image(image).unitPrice(unitPrice).build();
+    public static BookRepository getBookRepository() {
+        if (repository == null) {
+            repository = new BookRepository();
+        }
+        return repository;
+    }
+
+    public Hashtable<Integer, String[]> getData() {
+        return this.bookData;
+    }
+
+    public void readData() {
+        this.bookData = new Hashtable<>();
+        String line = "";
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(BookRepository.class.getResourceAsStream("book.csv"), "UTF-8"))) {
+            while((line = reader.readLine()) != null) {
+                String[] data = line.split("\\|");
+                this.bookData.put(Integer.parseInt(data[0]), data);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
-
 ----
 +
-3. 터미널을 열고, books 디렉토리로 이동합니다.
+3. 터미널을 열고, book 디렉토리로 이동합니다.
 +
 ----
 $ cd book
@@ -259,17 +287,29 @@ $ sudo mv ./*.class ../WEB-INF/classes/book
 <header>
     <title>Book Store</title>
 </header>
-<table width="1000">
+<body>
+<%
+    String userName = session.getId();
+%>
+<table cellpadding="7" cellspacing="0" width="100%" bgcolor="black" border="0">
     <tr>
-        <td width="800">
-            <img src="images/bookstorelogo.png" width="150" />
+        <td width="800" height="60" rowspan="2">
+            <img src="images/bookstore.png" width="200" />
         </td>
         <td valign="bottom">
-            <%= session.getId() %>
+            <span style="color:white"><%= userName %></span>
+            <span style="color:white"><a href="login.jsp">로그인</a></span>
         </td>
     </tr>
+    <tr>
+        <form method="post" action="search.jsp">
+        <td height="10">
+                <input type="text" name="searchString" />
+                <input type="submit" value="검색" />        
+        </td>
+        </form>
+    </tr>
 </table>
-<hr />
 ----
 +
 4. tail.jsp 파일을 열고 코드를 확인합니다.
@@ -277,28 +317,29 @@ $ sudo mv ./*.class ../WEB-INF/classes/book
 [source, html]
 ----
 <hr>
-<table>
+<table cellpadding="0" cellspacing="3" width="100%">
     <tr>
-        <td width="150">
-            <img src="images/logo.png" border="0" width="150" />
-        <td>
-        <td valign="top">
+        <td width="100" valign="top" style="align-items:top;padding:0px">
+            <img src="images/logo.png" border="1" width="130" />
+        </td>
+        <td style="padding:0px" valign="middle">
             <div style="font-size:9pt">Datamotion(R) Data Analytics Service all right reserved<br />
-            2006 ~ 2013</div>
+            since 2006</div>
         </td>
     </tr>
 <table>
+</body>
 <html>
 ----
 +
-5. index.jsp 파일을 열고 첫 번째 Todo 2 구역에 include 지시어를 사용하여 header.jsp 파일을 삽입합니다.
+5. index.jsp 파일을 열고 Todo 2 구역에 include 지시어를 사용하여 header.jsp 파일을 삽입합니다.
 +
 [source, html]
 ----
 <%@ include file="./header.jsp" %>
 ----
 +
-6. index.jsp 파일의 두 번째 Todo 구역에 include 지시어를 사용하여 tail.jsp 파일을 삽입합니다.
+6. index.jsp 파일의 Todo 3 구역에 include 지시어를 사용하여 tail.jsp 파일을 삽입합니다.
 +
 [source, html]
 ----
@@ -313,16 +354,14 @@ $ sudo mv ./*.class ../WEB-INF/classes/book
 
 <%@ include file="./header.jsp" %>
 
-<body>
 <table width="1000">
     <tr>
         <td>
-            <!-- Toto 3: insert codes for show top 5 book list -->
+            <!-- Toto 5: insert codes for show top 5 book list -->
             <h1>Book Store</h1>
         </td>
     </tr>
 </table>
-</body>
 
 <%@ include file="./tail.jsp" %>
 ----
@@ -331,7 +370,7 @@ $ sudo mv ./*.class ../WEB-INF/classes/book
 +
 image:../images/image07.png[width=650]
 +
-9. Visual Studio Code에서, index.jsp 페이지의 Todo 3 구역에 아래와 같은 import를 삽입합니다.
+9. Visual Studio Code에서, index.jsp 페이지의 Todo 4 구역에 아래와 같은 import를 삽입합니다.
 +
 [source, html]
 ----
@@ -341,7 +380,7 @@ image:../images/image07.png[width=650]
 <%@ page import="book.BookFactory" %>
 ----
 +
-10. Todo 4 구역에서, BookFactory 클래스의 getBest5Books 메소드를 호출하여 반환받은 ArrayList를 사용하여 책의 목록을 화면에 보여주는 코드를 작성합니다.
+10. Todo 5 구역에서, BookFactory 클래스의 getBest5Books 메소드를 호출하여 반환받은 ArrayList를 사용하여 책의 목록을 화면에 보여주는 코드를 작성합니다.
 +
 [source, html]
 ----

@@ -38,7 +38,7 @@ https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFil
 +
 image:../images/image09.png[]
 +
-7. /lab3-1 애플리케이션을 클릭하여 엽니다. 아래와 같은 웹 애플리케이션이 실행됩니다.
+7. /lab3-2 애플리케이션을 클릭하여 엽니다. 아래와 같은 웹 애플리케이션이 실행됩니다.
 +
 image:../images/image08.png[width=650]
 +
@@ -71,7 +71,7 @@ image:../images/image08.png[width=650]
 == 연습 2 상품 상세 정보를 보여주는 페이지 작성
 
 1. Visual Studio Code에서 bookdetail.jsp 파일을 열고 코드를 확인합니다.
-2. Todo 2 코드를 확인합니다. bookdetail.jsp 페이지는 isbn Request Parameter를 전달받아 Book 객체를 생성하고 화면에 보여줍니다.
+2. Todo 1 구역에서, isbn Request Parameter를 전달받아 Book 객체를 생성하는 코드를 작성합니다. Book 객체는 BookFactory 싱글턴 클래스의 getBookInfo 메소드에 isbn을 파라미터로 전달하여 얻을 수 있습니다. 작성된 코드는 아래와 유사할 것입니다.
 +
 [source, java]
 ----
@@ -109,8 +109,8 @@ Date: Wed, 20 Mar 2024 04:46:22 GMT
 * Connection #0 to host localhost left intact
 ----
 +
-5. bookdetail.jsp 페이지를 엽니다.
-6. Todo 1에서, 책 제목을 표시하는 코드를 bookdetail 페이지 링크로 변경합니다. 링크는 isbn 파라미터를 가지며 책의 isbn 값으로 전달합니다. 코드는 아래와 유사할 것입니다.
+5. index.jsp 페이지를 엽니다.
+6. Todo 2 구역에서, 책 제목을 표시하는 코드를 bookdetail 페이지 링크로 변경합니다. 링크는 isbn 파라미터를 가지며 책의 isbn 값으로 전달합니다. 코드는 아래와 유사할 것입니다.
 +
 [source, html]
 ----
@@ -137,13 +137,27 @@ image:../images/image10.png[]
 ----
 +
 3. search.jsp 파일을 엽니다.
-4. Todo 3에서, searchString 요청 파라미터를 전달받아 응답 결과를 작성하는 코드를 작성합니다. 응답 결과는 BookFactory 싱글턴 객체의 searchByTitle 메소드 호출로 List<BookInList> 타입으로 전달받을 수 있습니다. 코드는 아래와 유사할 것입니다.
+4. Todo 3 구역에서, searchString 요청 파라미터를 전달받아 응답 결과를 작성하는 코드를 작성합니다. 응답 결과는 BookFactory 싱글턴 객체의 searchByTitle 메소드 호출로 List<BookInList> 타입으로 전달받을 수 있습니다. 전달받은 List를 반복하여 검색된 책 목록을 화면에 보여주는 코드를 작성합니다. 코드는 아래와 유사할 것입니다.
 +
 [source, java]
 ----
 request.setCharacterEncoding("UTF-8");
 String searchString = request.getParameter("searchString");
 List<BookInList> list = BookFactory.getBookFactory().searchByTitle(searchString);
+
+for(BookInList book: list) {
+%>
+    <tr>
+        <td width="52"><img src="images/<%= book.getImage() %>" width="50" /></td>
+        <td>
+            <span style="font-weight:bold"><a href="bookdetail.jsp?isbn=<%= book.getIsbn() %>"><%= book.getTitle() %></a></span> <span style="font-size:8pt;color:gray;"><%= book.getSubTitle() %></span><br />
+            <span style="font-size:10pt"><%= book.getAuthor() %></span><br />
+            <span style="font-size:10pt;color:teal;"><%= book.getUnitPrice() %></span>
+         </td>
+</tr>
+<%
+}
+%>
 ----
 +
 5. 웹 브라우저에서 주소창에 http://localhost:8080/lab3-2/ 을 입력하고 이동합니다.

@@ -1,0 +1,16 @@
+= Lab 3-4 오류 페이지 처리
+
+1. WEB-INF/ 디렉토리에서 web.xml 파일을 엽니다.
+2. Todo 1 구역에서 400과 500 HTML 오류를 처리하는 요소를 작성합니다. 400 오류는 /400.jsp, 500 오류는 /500.jsp 페이지가 처리합니다.
+3. 500.jsp 페이지를 엽니다.
+4. Todo 2 구역에서 HTTP 상태 코드, Exception 타입, 메시지를 보여주는 코드를 작성합니다. 코드는 아래와 유사할 것입니다.
++
+[source, html]
+----
+<%
+    int status = response.getStatus();
+    String errorName = exception.getClass().getName();
+    String message = exception.getMessage();
+%>
+
+----

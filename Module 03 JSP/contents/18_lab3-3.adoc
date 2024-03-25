@@ -1,0 +1,11 @@
+= Lab 3-3 session 객체를 이용한 로그인 처리
+
+1. login.jsp 페이지를 열고 코드를 확인합니다.
+
+2. loginprocess.jsp 페이지를 열고 Toto 1 구역에 코드를 작성합니다.
+
+3. header.jsp 페이지를 열고 Todo 2 구역에 코드를 작성합니다.
+
+4. Julie, P@ssw0rd를 사용하여 로그인합니ㅏㄷ.
+
+5. 페이지를 확인합니다.

@@ -180,5 +180,5 @@ int add(int i, int j) {
 
 page 객체는 WAS에 의해 생성된 페이지 자체를 가리킵니다.
 
-link:./16_session.adoc[이전: session 객체] +
-link:./18_exception.adoc[다음: exception 객체]
+link:./18_lab3-3.adoc[이전: session 객체를 사용한 로그인 처리] +
+link:./20_exception.adoc[다음: exception 객체]
