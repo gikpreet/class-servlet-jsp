@@ -36,7 +36,7 @@ Linux(Ubuntu)에서 Tomcat 9 설치를 위해, 아래 웹 사이트의 설치 �
 
 1. 아래 링크에서 실습 파일을 다운로드 합니다.
 +
-https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-1.zip
+https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/Lab3-1.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
 3. 압축을 해제한 폴더의 Lab3-1\Starter 폴더를 아래 폴더로 복사합니다.
