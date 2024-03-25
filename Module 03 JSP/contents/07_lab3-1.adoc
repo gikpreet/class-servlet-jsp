@@ -52,7 +52,7 @@ image:../images/image02.png[]
 +
 b. macOS
 +
-
+image:../images/image12.png[]
 +
 5. 웹 브라우저를 실행하여 http://localhost:8080 으로 이동하고, Manager App 버튼을 클릭합니다.
 6. 로그인 창에서, 사용자 이름과 비밀번호에 admin을 입력하고 로그인합니다.
@@ -70,7 +70,7 @@ image:../images/image04.png[width=450]
 
 1. 아래 링크에서 실습 파일을 다운로드 합니다.
 +
-https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-1.zip
+https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/Lab3-1.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
 3. 압축을 해제한 폴더의 Lab3-1 폴더를 /opt/homebrew/Cellar/tomcat@9/9.0.85/libexec/webapps 디렉토리로 복사합니다.
@@ -90,7 +90,7 @@ image:../images/image05.png[width=450]
 
 1. 아래 링크에서 실습 파일을 다운로드 합니다.
 +
-https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-1.zip
+https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/Lab3-1.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
 3. 압축을 해제한 폴더의 Lab3-1 폴더를 /var/lib/tomcat9/webapps 디렉토리로 복사합니다.
@@ -386,7 +386,7 @@ image:../images/image07.png[width=650]
 ----
 <table width=600>
     <%
-    List<BookInList> list = BookFactory.getBest5Books();
+    List<BookInList> list = BookFactory.getBookFactory().getBest5Books();
 
     for(BookInList book: list) {
     %>
