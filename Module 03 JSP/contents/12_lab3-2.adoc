@@ -11,7 +11,7 @@
 https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-2.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
-3. 압축을 해제한 폴더의 Lab3-2 폴더를 c:\apache-tomcat-9.8.xx\webapps 폴더로 복사합니다.
+3. 압축을 해제한 폴더의 Starter 폴더를 c:\apache-tomcat-9.8.xx\webapps 폴더로 복사합니다.
 4. 웹 브라우저를 실행하여 http://localhost:8080 으로 이동하고, Manager App 버튼을 클릭합니다.
 5. 로그인 창에서, 사용자 이름과 비밀번호에 admin을 입력하고 로그인합니다.
 6. Tomcat 웹 애플리케이션에서 /lab3-2 애플리케이션을 확인합니다.
@@ -31,7 +31,7 @@ image:../images/image08.png[width=650]
 https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-2.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
-3. 압축을 해제한 폴더의 Lab3-2 폴더를 /opt/homebrew/Cellar/tomcat@9/9.0.85/libexec/webapps 디렉토리로 복사합니다.
+3. 압축을 해제한 폴더의 Starter 폴더를 /opt/homebrew/Cellar/tomcat@9/9.0.85/libexec/webapps 디렉토리로 복사합니다.
 4. 웹 브라우저를 실행하여 http://localhost:8080 으로 이동하고, Manager App 버튼을 클릭합니다.
 5. 로그인 창에서, 사용자 이름과 비밀번호에 admin을 입력하고 로그인합니다.
 6. Tomcat 웹 애플리케이션에서 /lab3-1 애플리케이션을 확인합니다.
@@ -51,7 +51,7 @@ image:../images/image08.png[width=650]
 https://github.com/gikpreet/class-servlet-jsp/blob/main/Module%2003%20JSP/LabFile/lab3-2.zip
 +
 2. 다운로드한 파일의 압축을 해제합니다.
-3. 압축을 해제한 폴더의 Lab3-2 폴더를 /var/lib/tomcat9/webapps 디렉토리로 복사합니다.
+3. 압축을 해제한 폴더의 Starter 폴더를 /var/lib/tomcat9/webapps 디렉토리로 복사합니다.
 +
 ----
 $ cp -r ~/Downloads/lab3-2/ /var/lib/tomcat9/webapps/
