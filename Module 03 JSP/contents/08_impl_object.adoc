@@ -1,0 +1,24 @@
+= JSP 내장 객체
+
+JSP는 HTTP 프로토콜에서 전달하는 response, request 등의 정보와 출력, 페이지, 응용 프로그램을 표시하는 기본으로 포함된 웹 프로그래밍을 위한 필수적인 객체들을 제공합니다. 
+
+기본으로 제공되는 객체들을 사용하여 클라이언트에서 요청을 전달받고, 응답을 생성하며, 페이지간 정보를 공유하는 등의 작업을 수행할 수 있습니다.
+
+이 단원에서는 JSP에서 제공하는 기본 내장 객체들에 대해 알아봅니다.
+
+== Table of Contents
+
+1. JSP 내장 객체 개요
+2. request 객체
+3. HTTP 메소드
+4. response 객체
+5. application 객체
+6. out 객체
+7. Session
+8. session 객체
+9. page 객체
+10. exception 객체
+11. 내장 객체의 범위
+
+link:./07_lab3-1.adoc[이전: Lab 3-1 간단한 JSP 응용 프로그램 생성] +
+link:./09_implicit_object.adoc[다음: JSP 내장 객체 개요]
