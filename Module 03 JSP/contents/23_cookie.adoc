@@ -41,7 +41,15 @@ Cookie는 아래와 같은 속성을 가집니다.
 |setDomain(String domain)|void|Cookie에 적용할 도메인을 설정합니다.
 |setPath(String path)|void|Cookie가 적용될 경로를 지정합니다.
 |setMaxAge(int expiresecond)|void|Cookie가 지정될 시간을 초 단위로 설정합니다. 기간을 설정하지 않으면 브라우저가 닫힐 때 삭제됩니다.
+|getCookies{}|Cookie[]|
+|getName()|String|Cookie의 이름을 가져옵니다.
+|getValue()|String|Cookie의 값을 가져옵니다.
+|getDomain()|String|Cookie에 적용된 도메인의 값을 가져옵니다.
+|getPath()|String|Cookie에 적용된 경로를 가져옵니다.
+|getMaxAge()|String|int|Cookie에 지정된 지속 시간을 가져옵니다.
 |===
+
+Cookie의 전체 메소드는 https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/Cookie.html 을 참조합니다.
 
 link:./22_scope.adoc[이전: 내장 객체의 범위] +
 link:./24_lab3-5.adoc[다음: Lab 3-5 Cookie 설정]
