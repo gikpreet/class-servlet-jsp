@@ -45,5 +45,5 @@ JSP 내장 객체의 종류는 아래와 같습니다.
 |exception|java.lang.**Exception**|예외
 |===
 
-link:./lab3-1.adoc[이전: Lab 3-1 간단한 JSP 응용 프로그램 생성] +
-link:./09_request.adoc[다음: requst 객체]
+link:./08_impl_object.adoc[이전: Chapter 2: JSP 내장 객체] +
+link:./10_request.adoc[다음: requst 객체]

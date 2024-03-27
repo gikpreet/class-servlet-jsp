@@ -110,5 +110,5 @@ image:../images/image13.png[]
 +
 image:../images/image14.png[]
 
-link:./20_exception.adoc[이전: exception 객체] +
-link:./22_scope.adoc[다음: 내장 객체의 범위]
+link:./21_exception.adoc[이전: exception 객체] +
+link:./23_scope.adoc[다음: 내장 객체의 범위]

@@ -51,5 +51,5 @@ Cookie는 아래와 같은 속성을 가집니다.
 
 Cookie의 전체 메소드는 https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/Cookie.html 을 참조합니다.
 
-link:./22_scope.adoc[이전: 내장 객체의 범위] +
-link:./24_lab3-5.adoc[다음: Lab 3-5 Cookie 설정]
+link:./23_scope.adoc[이전: 내장 객체의 범위] +
+link:./25_lab3-5.adoc[다음: Lab 3-5 Cookie 설정]

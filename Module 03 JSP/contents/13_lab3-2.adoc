@@ -293,5 +293,5 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 <html>* Connection #0 to host localhost left intact
 ----
 
-link:./11_response.adoc[이전: response 객체] +
-link:./13_application.adoc[이전: application 객체]
+link:./12_response.adoc[이전: response 객체] +
+link:./14_application.adoc[이전: application 객체]

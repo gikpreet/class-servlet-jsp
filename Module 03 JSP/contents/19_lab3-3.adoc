@@ -151,5 +151,5 @@ else {
 7. Julie, P@ssw0rd를 사용하여 로그인합니다.
 8. index.jsp 페이지의 오른쪽 상단에서 사용자의 이름을 확인합니다.
 
-link:./17_session_object.adoc[이전: session 객체] +
-link:./19_page.adoc[다음: page 객체]
+link:./18_session_object.adoc[이전: session 객체] +
+link:./20_page.adoc[다음: page 객체]

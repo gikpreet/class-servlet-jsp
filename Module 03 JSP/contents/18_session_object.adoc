@@ -24,5 +24,5 @@ javax.servlet.http.HttpSession 타입 객체인 session 객체는 JSP에서 클�
 
 session 객체의 전체 메소드는 https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpSession.html 를 참조합니다.
 
-link:./16_session.adoc[이전: Session] +
-link:./18_lab3-3.adoc[다음: Lab 3-3 session 객체를 사용한 로그인 처리]
+link:./17_session.adoc[이전: Session] +
+link:./19_lab3-3.adoc[다음: Lab 3-3 session 객체를 사용한 로그인 처리]

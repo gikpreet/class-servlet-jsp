@@ -23,5 +23,5 @@ out 내장객체에서 출력되는 모든 정보는 버퍼에 먼저 저장된 
 |println([원시 데이터 타입, String, Object]))|void|파라미터로 전달받은 값을 출력
 |===
 
-link:./13_application.adoc[이전: application 객체] +
-link:./15_pagecontext.adoc[다음: pagecontext 객체]
+link:./14_application.adoc[이전: application 객체] +
+link:./16_pagecontext.adoc[다음: pagecontext 객체]

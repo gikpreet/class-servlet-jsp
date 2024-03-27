@@ -34,3 +34,5 @@ application 영역은 WAS 기준에서 하나의 웹 애플리케이션을 의�
 
 application 내장 객체가 대응됩니다.
 
+link:./22_lab3-4.adoc[이전: Lab 3-4 오류 페이지 처리] +
+link:./24_cookie.adoc[다음: Cookie]

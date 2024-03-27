@@ -121,5 +121,5 @@ DELETE 메소드는 특정 자원을 지우도록 요청합니다.
 
 TRACE 메소드는 클라이언트가 서버에 보낸 요청의 복사본을 돌려받도록 합니다. 테스트 용도로 쓰입니다.
 
-link:./09_request.adoc[이전: Request 객체] +
-link:./11_response.adoc[다음: Response 객체]
+link:./10_request.adoc[이전: Request 객체] +
+link:./12_response.adoc[다음: Response 객체]

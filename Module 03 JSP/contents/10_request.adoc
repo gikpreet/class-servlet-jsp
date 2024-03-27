@@ -80,5 +80,5 @@ while(headers.hasMoreElements()) {
 }
 ----
 
-link:./08_implicit_object.adoc[이전: JSP 내장 객체] +
-link:./10_http_method.adoc[다음: HTTP method]
+link:./09_implicit_object.adoc[이전: JSP 내장 객체] +
+link:./11_http_method.adoc[다음: HTTP method]

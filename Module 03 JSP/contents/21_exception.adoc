@@ -52,5 +52,5 @@ page 디렉티브에서 아래와 같이 errorPage에 오류발생시 처리할 
 </web-app>
 ----
 
-link:./19_page.adoc[이전: page 객체] +
-link:./21_lab3-4.adoc[다음: Lab 3-4 오류 페이지 처리]
+link:./20_page.adoc[이전: page 객체] +
+link:./22_lab3-4.adoc[다음: Lab 3-4 오류 페이지 처리]

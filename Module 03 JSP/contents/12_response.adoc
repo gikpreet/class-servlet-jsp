@@ -43,5 +43,5 @@ response 객체는 응답의 컨텐트 타입, 문자열 등 객체의 응답 �
 |sendRedirect(String location)|void|웹 서버가 웹 브라우저에게 지정한 URL로 자동 이동
 |===
 
-link:./10_http_method.adoc[이전: HTTP 메소드] +
-link:./12_lab3-2.adoc[다음: 연습 3-1 응용 프로그램에 검색 추가]
+link:./11_http_method.adoc[이전: HTTP 메소드] +
+link:./13_lab3-2.adoc[다음: 연습 3-1 응용 프로그램에 검색 추가]

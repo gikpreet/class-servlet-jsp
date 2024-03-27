@@ -24,5 +24,5 @@ pageContext 객체는 직접 사용하기 보다는 커스텀 태그를 구현�
 실제로 이 메서드들은 JSP 페이지가 서블릿으로 변환될 때 기본객체들을 생성하는데에 사용됩니다. 
 |===
 
-link:./14_out.adoc[이전: out 객체] +
-link:./16_session.adoc[다음: session 객체]
+link:./15_out.adoc[이전: out 객체] +
+link:./17_session.adoc[다음: session 객체]

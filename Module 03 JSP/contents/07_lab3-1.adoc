@@ -451,4 +451,4 @@ image:../images/image07.png[width=650]
 image:../images/image08.png[width=650]
 
 link:./06_jsp_tags.adoc[이전: JSP 기본 태그] +
-link:./08_implicit_object.adoc[다음: JSP 내장 객체]
+link:./08_impl_object.adoc[다음: JSP 내장 객체]

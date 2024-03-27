@@ -93,3 +93,5 @@ image:../images/image17.png[]
 12. 모든 웹 브라우저를 종료합니다.
 13. 웹 브라우저를 실행하고, http://localhost:8080/lab3-1/login.jsp 로 이동합니다.
 14. 사용자 ID가 표시되지 않는 것을 확인합니다.
+
+link:./24_cookie.adoc[이전: Cookie]
