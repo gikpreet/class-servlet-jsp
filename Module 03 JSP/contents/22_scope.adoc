@@ -30,12 +30,7 @@ session 내장 객체가 대응됩니다.
 
 == application 영역
 
--application 영역은 하나의 웹 애플리케이션당 1개의 appliction 객체가 생성된다.
+application 영역은 WAS 기준에서 하나의 웹 애플리케이션을 의미합니다. application 객체는 웹 애플리케이션당 하나가 생성되며, 웹 애플리케이션에 요청되는 페이지들은 같은 객체를 공유합니다.
 
- 
+application 내장 객체가 대응됩니다.
 
--웹 애플리케이션에 요청되는 페이지들은 같은 객체를 공유한다.
-
- 
-
--application 내장 객체를 사용한다.

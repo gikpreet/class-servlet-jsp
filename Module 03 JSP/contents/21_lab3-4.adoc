@@ -109,3 +109,6 @@ image:../images/image13.png[]
 9. 웹 브라우저에서 http://localhost:8080/lab3-4/bookdetail.jsp?isbn=3 페이지를 열고 처리된 오류를 확인합니다.
 +
 image:../images/image14.png[]
+
+link:./20_exception.adoc[이전: exception 객체] +
+link:./22_scope.adoc[다음: 내장 객체의 범위]
