@@ -1,0 +1,11 @@
+= Servlet 개요
+
+Servlet은 JSP가 나오기 전, CGI를 대체하여 Java로 웹 애플리케이션을 개발할 수 있도록 만든 기술중의 하나입니다. 서블릿은 웹 요청과 응답의 흐름을 간단한 메서드 호출만으로 체계적으로 다룰 수 있게 해줍니다.
+
+Servlet은 JSP와 마찬가지로 Java EE에 포함된 기술이며, Java EE에서 JSP와 함께 웹을 기반으로 한 클라이언트/서버 기술을 담당합니다.
+
+이 단원에서는 Servlet에 대해 알아봅니다.
+
+== Table of Contents
+
+1. Servlet 개요
