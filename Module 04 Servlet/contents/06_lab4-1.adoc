@@ -5,26 +5,213 @@
 1. IntelliJ를 실행합니다.
 2. New Project를 클릭합니다.
 +
-image:../images/image04.png[]
+image:../images/image04.png[width=500]
 +
-3. New Project 대화상자에서 아래와 같이 설정한 후 **Next** 버튼을 클릭합니다.
-a. **Name**: hello
-b. **location**: ~\IdeaProjects/servlet-jsp
-c. **Template**: Web application
-d. **Application Server**: 설치된 Tomcat 디렉토리
+3. New Project 대화상자에서 아래와 같이 설정한 후 **Create** 버튼을 클릭합니다.
+* **Name**: hello
+* **Location**: ~/ideaProject/servlet-jsp
+* **Language**: Java
+* **Build system**: Maven
+* **JDK**: <설치된 JDK 버전과 맞는지 확인>
+* **GroupId**: com.nhnacademy
+* **ArtifactId**: hello
++
+image:../images/image05.png[width:550]
++
+4. 프로젝트가 생성되면, Project 창에서 hello 프로젝트를 선택한 후 Ctrl + Shift + A 키를 누릅니다.
++
+5. **Add Framework Support**를 검색하고 클릭합니다.
++
+image:../images/image06.png[width=550]
++
+6. **Add Framework Support** 창에서, **Java EE** 아래의 **Web Application**을 선택하고 **Version**을 4.0으로 선택한 후 **OK** 버튼을 클릭합니다.
++
+image:../images/image07.png[width=550]
++
+7. 생성된 프로젝트에서, web 폴더를 마우스 오른쪽 클릭하고 Refactor -> Rename을 클릭한 후 폴더의 이름을 webapps로 변경합니다.
+8. webapps 폴더를 src/main 폴더로 이동합니다.
+9. 프로젝트 폴더 구조를 확인합니다.
++
+image:../images/image08.png[width=550]
++
+10. pom.xml 파일을 엽니다.
+11. pom.xml 파일에, jakarta.servlet-api 의존성을 추가합니다.
++
+[source, xml]
+----
+<dependencies>
+    <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>4.0.4</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+----
++
+12. 빌드 플러그인인 maven-war-plugin 설정을 추가합니다.
++
+[source, xml]
+----
+<packaging>war</packaging>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.3.2</version>
+            <configuration>
+                <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+----
++
+13. 전체 pom.xml 파일은 아래와 같이 됩니다.
++
+[source, xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nhnacademy</groupId>
+    <artifactId>hello</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>4.0.4</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <packaging>war</packaging>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+----
++
+14. hello/src/main/java/com.nhnacademy 폴더를 마우스 오른쪽 클릭하고 **New** -> **Package**를 클릭합니다.
++
+image:../images/image09.png[]
++
+15. **New Package** 대화상자에서 com.nhnacademy.hello를 입력하고 Enter 키를 눌러 패키지를 생성합니다.
++
+image:../images/image10.png[]
++
+16. 생성한 com.nhnacademy.hello 패키지를 마우스 오른쪽 클릭하고 **New** -> **Java Class**를 클릭합니다.
++
+image:../images/image11.png[]
++
+17. **Class**를 선택하고 **Name**에 HelloServlet을 입력하고 Enter 키를 눌러 클래스를 생성합니다.
++
+image:../images/image12.png[]
++
+18. 생성된 HelloServlet 클래스를 HttpServlet 클래스에서 파생되도록 코드를 수정합니다.
+19. HelloServlet 클래스에 아래와 같이 doGet 메소드를 오버라이드하는 메소드를 작성합니다.
++
+[source, java]
+----
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    resp.setCharacterEncoding("UTF-8");
+    try(PrintWriter writer = resp.getWriter()) {
+        writer.println("<!DOCTYPE html>");
+        writer.println("<html>");
+        writer.println("<head>");
+        writer.println("<meta charset='utf-8'>");
+        writer.println("</head>");
+        writer.println("<body>");
+        writer.println("<h1>hello servlet!</h1>");
+        writer.println("<h1>안녕 서블릿!</h1>");
+        writer.println("</body>");
+        writer.println("</html>");
+    } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
+}
+----
++
+20. webapps/web.xml 파일을 엽니다.
+21. servlet과 servlet-mapping 요소를 추가하여 추가한 HelloServlet 클래스를 등록합니다.
++
+[source, xml]
+----
+<servlet>
+    <servlet-name>helloServlet</servlet-name>
+    <servlet-class>com.nhnacademy.hello.HelloServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>helloServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+</servlet-mapping>
+----
++
+22. **Run** 메뉴에서 **Edit Configuration..**을 클릭합니다.
++
+image:../images/image13.png[width=400]
++
+23. **Run/Debug Configuration** 창에서 **Add new run configuration...**을 클릭합니다.
++
+image:../images/image14.png[width=420]
++
+24. **Add new Configuration** 대화상자에서 **Tomcat Server** -> **Local**을 선택합니다.
++
+image:../images/image15.png[width=320]
++
+25. Tomcat Server 설정 창에서, **Server** 탭의 **Application Server** 에서 **Configur..** 버튼을 클릭합니다.
+26. **Application Servers** 창에서, **Tomcat Home**에 Tomcat이 설치된 디렉토리를 지정합니다.
 . Windows: c:\apache-tomcat-9.8.xx
 . macOS: /opt/homebrew/Cellar/tomcat@9/9.0.85/
 . Linux(Ubuntu): /var/lib/tomcat9/
++
+image:../images/image16.png[width=300]
 e. **Language**: Java
-f. **Build System**: Maven
-g. **Group ID**: com.nhnacademy
-h. **ArtifaIdt**: hello
-i. JDK: 설치된 JDK 버전과 맞는지 확인
 +
-image:../images/image05.png[]
+27. Tomcat 설정을 확인합니다.
 +
-4. 다음 페이지에서 **Version**에 Java EE 8을 선택하고 **Create** 버튼을 클릭합니다.
+image:../images/image17.png[width=450]
 +
-image:../images/image06.png[]
+28. **Deployment** 탭에서, **Deploy at the servet startup** 구역에서 + 기호를 클릭하고 **Artifact..**를 클릭합니다.
 +
-
+image:../images/image18.png[width=450]
++
+29. **Select Artifacts to Deploy** 대화상자에서 **hello:war exploded**를 선택하고 **OK** 버튼을 클릭합니다.
++
+image:../images/image19.png[]
++
+30. **Application context**를 `/` 로 변경합니다.
++
+image:../images/image20.png[width=500]
++
+31. **Run/Debug Congigurations** 창에서 **OK** 버튼을 클릭합니다.
+32. 오른쪽 위에서 Run 버튼을 클릭합니다.
++
+image:../images/image21.png[]
++
+33. 
